@@ -39,6 +39,10 @@ jobs:
         with:
           node-version: 20
           cache: pnpm 
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v2.0.1  # 使用 pnpm setup action
+        with:
+          version: 8.12.0  # 你需要的 pnpm 版本
       - name: Setup Pages
         uses: actions/configure-pages@v4
       - name: Install dependencies
