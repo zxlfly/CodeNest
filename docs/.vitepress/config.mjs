@@ -4,7 +4,7 @@ import { defineConfig } from "vitepress";
 export default defineConfig({
 	title: "累了就休息下吧",
 	lang: "zh-cn",
-	// base: "/theRoadIHaveTaken/", // 项目的根路径
+	base: "/CodeNest/", // 项目的根路径
 	ignoreDeadLinks: false, // 构建时会忽略md中的外链
 	markdown: {
 		// theme: 'material-palenight',//md主题
