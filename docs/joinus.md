@@ -31,6 +31,42 @@ pnpm dev
 
 ## 关于文档编辑
 ### 添加新的模块
+1. 首先需要在``docs/index.md``中新增模块
+    - 在features配置项中新增
+    - icon使用svg，放在public/img中
+2. 然后在``docs/.vitepress/config.js``配置文件中新增对应模块
+    1. **nav**配置
+        - 如果你需要调整nav中的路由配置，需要调用``getNav``方法，它接受两个参数
+            - 生成的路由菜单对象
+            - 需要显示在**nav**菜单中的模块，以数组的形式传递，里面的元素为对象形式，有两个key
+                - dirName：模块对应的packages下的目录名称
+                - menuName: **nav**中展示的名称，需要和**index.md**中的统一
+        - ```javascript
+            const navModelList = getNav(packagesData,[
+                {dirName:'web',menuName:'web前端基础'},
+                {dirName:'engineering',menuName:'工程化'},
+                {dirName:'vue',menuName:'vue'},
+                {dirName:'react',menuName:'react'},
+                {dirName:'webgl',menuName:'webgl'},
+                {dirName:'algorithm',menuName:'算法'},
+            ]) 
+            ```
+    2. 不需要手动配置**sidebar**，会自动根据**packages**下的目录结构生成目录
+3. 最后在packages新增对应模块的目录
+    - 目录命名没有约束
+    - md文件命名有两种方式
+        - 固定格式
+            - 以``_sort.1_``这种形式开头，其中数字越小排列的越靠前
+            - 页面路由菜单默认过滤了固定格式部分的字符
+        - 任意命名方式
+            - 这种方式在排序匹配的时候，会默认在固定格式的后面，且以字符串比较的方式排序
+
+### 编辑原有模块
+- 如果只是修改原有的文章，可以直接找到对应的md文件修改即可
+- 如果是新增内容，在对应的文件夹下新增md文件
+<!-- - 如果是新增内容，在对应的文件夹下新增md文件，然后在sidebar配置项中找到对应的模块，在items中新增路由即可 -->
+
+<!-- ### 添加新的模块
 1. 首先需要再``docs/index.md``中新增模块，在features配置项中新增，icon使用svg，放在public/img中
 2. 然后在``docs/.vitepress/config.js``配置文件中新增对应模块
     1. 在nav配置项中新增模块列表项
@@ -41,4 +77,4 @@ pnpm dev
 
 ### 编辑原有模块
 - 如果只是修改原有的文章，可以直接找到对应的md文件修改即可
-- 如果是新增内容，在对应的文件夹下新增md文件，然后在sidebar配置项中找到对应的模块，在items中新增路由即可
+- 如果是新增内容，在对应的文件夹下新增md文件，然后在sidebar配置项中找到对应的模块，在items中新增路由即可 -->

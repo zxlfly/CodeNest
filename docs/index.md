@@ -50,7 +50,7 @@ features:
   - icon: { src:  /img/webgl.svg  }
     title: Webgl
     details: 基于JavaScript的图形库，用于在Web浏览器中实现3D图形渲染。
-    link : /packages/webgl/
+    link : /packages/webgl/_sort.1_基本介绍
   - icon: { src:  /img/suanfa.svg  }
     title: 算法
     details: 加深对编程语言和数据结构的理解，培养逻辑思维。
