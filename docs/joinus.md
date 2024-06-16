@@ -17,7 +17,7 @@ pnpm dev
 ```
 
 ## 参与贡献
-- 点请确保你已经完成快速上手中的步骤，并且正常访问
+- 点请确保你已经完成快速上手中的步骤，正常访问，并且本地打包预览正常
 - 点创建新分支 ``git checkout -b username/feature1``，分支名字建议为``username/feat-xxx/username/fix-xxx``
 - 点本地编码，需遵循 开发规范  遵循 Angular Commit Message Format 进行提交（不符合规范的提交将不会被合并）
 - 在提交之前，建议本地配置好[GPG](https://docs.github.com/en/authentication/managing-commit-signature-verification)，可以在提交之前给Commit添加**GPG**签名
