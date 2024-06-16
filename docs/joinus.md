@@ -6,7 +6,7 @@
 - 点Clone 个人空间项目到本地：``git clone https://github.com/zxlfly/CodeNest.git``  
     - 如果配置过[SSH](https://docs.github.com/en/authentication/connecting-to-github-with-ssh)推荐使用``git clone git@github.com:zxlfly/CodeNest.git``
 - 点在 CodeNest 的根目录下运行``npm i``、``yarn``或者``pnpm i``, 安装 node 依赖  
-- 点运行 ``npm run dev``、``yarn dev``或者``pnpm dev``，启动组件库网站  
+- 点运行 ``npm run dev``、``yarn dev``或者``pnpm dev``，启动网站  
 - 使用浏览器访问
 ```bash
 # zxlfly 为用户名，执行前请替换
@@ -40,7 +40,7 @@ pnpm dev
             - 生成的路由菜单对象
             - 需要显示在**nav**菜单中的模块，以数组的形式传递，里面的元素为对象形式，有两个key
                 - dirName：模块对应的packages下的目录名称
-                - menuName: **nav**中展示的名称，需要和**index.md**中的统一
+                - menuName: **nav**中展示的名称，需要和``docs/index.md``中的统一
         - ```javascript
             const navModelList = getNav(packagesData,[
                 {dirName:'web',menuName:'web前端基础'},
