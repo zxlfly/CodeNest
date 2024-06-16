@@ -15,30 +15,78 @@ hero:
       link: /markdown-examples
 
 features:
-  - icon: { src:  /img/HTML.svg  }
-    title: Html
-    details: 程序员的系统教程
-    link: /packages/html/
-  - icon: { src:  /img/css.svg  }
-    title: Css
-    link: /packages/css/
-  - icon: { src:  /img/javascript.svg  }
-    title: Javascript
-    link: /packages/javascript/
-  - icon: { src:  /img/typescript.svg  }
-    title: Typescript
-    link: /packages/typescript/
+  # - icon: { src:  /img/HTML.svg  }
+  #   title: Html
+  #   details: web前端入门必备三剑客之一，用于创建网页结构的标记语言。
+  #   link: /packages/html/
+  # - icon: { src:  /img/css.svg  }
+  #   title: Css
+  #   details: web前端入门必备三剑客之一，用于样式和布局网页元素的标记语言。
+  #   link: /packages/css/
+  # - icon: { src:  /img/javascript.svg  }
+  #   title: Javascript
+  #   details: web前端入门必备三剑客之一，创建动态和交互式网页内容的脚本语言。
+  #   link: /packages/javascript/
+  # - icon: { src:  /img/typescript.svg  }
+  #   title: Typescript
+  #   details: JavaScript的超集，支持静态类型和面向对象编程
+  #   link: /packages/typescript/
+  - icon: { src:  /img/web-icon.svg  }
+    title: web前端基础
+    details: 包含HTML、CSS、JavaScript、typescript、http等。
+    link : /packages/web/
+  - icon: { src:  /img/engineering.svg  }
+    title: 工程化
+    details: 通过使用各种工具和流程，对前端开发进行标准化、自动化和优化，以提高团队协作、代码质量和项目交付效率。
+    link: /packages/engineering/
   - icon: { src:  /img/Vue.svg  }
     title: vue
+    details: web前端主流的开发框架之一，由尤雨溪个人主导开发。
     link : /packages/vue/
   - icon: { src:  /img/react.svg  }
     title: react
+    details: web前端主流的开发框架之一，由Facebook开发。
     link: /packages/react/
-  - icon: { src:  /img/tuxing.svg  }
+  - icon: { src:  /img/webgl.svg  }
     title: Webgl
+    details: 基于JavaScript的图形库，用于在Web浏览器中实现3D图形渲染。
     link : /packages/webgl/
   - icon: { src:  /img/suanfa.svg  }
     title: 算法
+    details: 加深对编程语言和数据结构的理解，培养逻辑思维。
     link: /packages/algorithm/
+  - icon: { src:  /img/dynamic-large-screen.svg  }
+    title: 动态大屏
+    details: 拖拉拽生成数据可视化页面，基于vue3打造。
+    link: /packages/dynamic-large-screen/
+  - icon: { src:  /img/low-code.svg  }
+    title: 低代码平台
+    details: 拖拉拽生成前端页面，基于react打造。
+    link: /packages/low-code/
+  - icon: { src:  /img/admin-framework.svg  }
+    title: 中后台管理系统框架
+    details: 从0到1搭建一个中后台框架，基于Vue3。
+    link: /packages/admin-framework/
+  - icon: { src:  /img/mini-ui.svg  }
+    title: 组件库搭建
+    details: 从0到1搭建一个UI库。
+    link: /packages/mini-ui/
 ---
 
+<script setup>
+import { VPTeamMembers } from 'vitepress/theme'
+
+const members = [
+  {
+    avatar: 'https://avatars.githubusercontent.com/u/26324442?s=96&v=4',
+    name: 'zxlfly',
+    title: 'Creator',
+    links: [
+      { icon: 'github', link: 'https://github.com/zxlfly' },
+    ]
+  },
+]
+</script>
+&nbsp;
+# 参与的伙伴
+<VPTeamMembers size="small" :members="members" />

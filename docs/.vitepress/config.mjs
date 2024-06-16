@@ -2,7 +2,8 @@ import { defineConfig } from "vitepress";
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
-	title: "今天你学习了吗",
+	title: "累了就休息下吧",
+	lang: "zh-cn",
 	// base: "/theRoadIHaveTaken/", // 项目的根路径
 	ignoreDeadLinks: false, // 构建时会忽略md中的外链
 	markdown: {
@@ -44,21 +45,29 @@ export default defineConfig({
 			{
 				text: "模块列表",
 				items: [
-					{
-						items: [
-							{ text: "html", link: "/packages/html/" },
-							{ text: "css", link: "/packages/css/" },
-						],
-					},
+					// {
+					// 	items: [
+					// 		{ text: "html", link: "/packages/html/" },
+					// 		{ text: "css", link: "/packages/css/" },
+					// 	],
+					// },
+					// {
+					// 	items: [
+					// 		{
+					// 			text: "javascript",
+					// 			link: "/packages/javascript/",
+					// 		},
+					// 		{
+					// 			text: "typescript",
+					// 			link: "/packages/typescript/",
+					// 		},
+					// 	],
+					// },
 					{
 						items: [
 							{
-								text: "javascript",
-								link: "/packages/javascript/",
-							},
-							{
-								text: "typescript",
-								link: "/packages/typescript/",
+								text: "web基础",
+								link: "/packages/web/",
 							},
 						],
 					},
@@ -85,6 +94,14 @@ export default defineConfig({
 					{
 						items: [
 							{
+								text: "工程化",
+								link: "/packages/engineering/",
+							},
+						],
+					},
+					{
+						items: [
+							{
 								text: "算法",
 								link: "/packages/algorithm/",
 							},
@@ -95,25 +112,42 @@ export default defineConfig({
 		],
 
 		sidebar: {
-			"/packages/javascript/": [
+			"/packages/web/": [
+				{ text: "基本介绍", link: "/packages/web/" },
 				{
+					text: "html",
+					collapsible: true,
+					collapsed: false,
+					items: [
+						{ text: "基本介绍", link: "/packages/html/" },
+					],
+				},{
+					text: "css",
 					collapsible: true,
 					collapsed: true,
 					items: [
-						{
-							text: "javascript",
-							link: "/packages/javascript/",
-						},
+						{ text: "基本介绍", link: "/packages/css/" },
 					],
-				},
-			],
-			"/packages/css/": [
-				{
-					text: "css",
+				},{
+					text: "javascript",
+					collapsible: true,
+					collapsed: true,
 					items: [
-						{ text: "Index", link: "/packages/css/" },
-						{ text: "One", link: "/packages/css/one" },
-						{ text: "Two", link: "/packages/css/two" },
+						{text: "javascript",link: "/packages/javascript/",},
+					],
+				},{
+					text: "typescript",
+					collapsible: true,
+					collapsed: true,
+					items: [
+						{ text: "基本介绍", link: "/packages/typescript/" },
+					],
+				},{
+					text: "常见问题和轮子",
+					collapsible: true,
+					collapsed: true,
+					items: [
+						{ text: "基本介绍", link: "/packages/wheel/" },
 					],
 				},
 			],
@@ -121,9 +155,24 @@ export default defineConfig({
 				{
 					text: "html",
 					items: [
-						{ text: "Index", link: "/packages/html/" },
-						{ text: "One", link: "/packages/html/one" },
-						{ text: "Two", link: "/packages/html/two" },
+						{ text: "基本介绍", link: "/packages/html/" },
+					],
+				},
+			],
+			"/packages/css/": [
+				{
+					text: "css",
+					items: [
+						{ text: "基本介绍", link: "/packages/css/" },
+					],
+				},
+			],
+			"/packages/javascript/": [
+				{
+					collapsible: true,
+					collapsed: true,
+					items: [
+						{text: "javascript",link: "/packages/javascript/",},
 					],
 				},
 			],
@@ -131,19 +180,25 @@ export default defineConfig({
 				{
 					text: "typescript",
 					items: [
-						{ text: "Index", link: "/packages/typescript/" },
-						{ text: "One", link: "/packages/typescript/one" },
-						{ text: "Two", link: "/packages/typescript/two" },
+						{ text: "基本介绍", link: "/packages/typescript/" },
 					],
 				},
+			],
+			"/packages/wheel/": [
+				{
+					text: "常见问题和轮子",
+					collapsible: true,
+					collapsed: true,
+					items: [
+						{ text: "基本介绍", link: "/packages/wheel/" },
+					],
+				}
 			],
 			"/packages/vue/": [
 				{
 					text: "vue",
 					items: [
-						{ text: "Index", link: "/packages/vue/" },
-						{ text: "One", link: "/packages/vue/one" },
-						{ text: "Two", link: "/packages/vue/two" },
+						{ text: "基本介绍", link: "/packages/vue/" },
 					],
 				},
 			],
@@ -151,19 +206,16 @@ export default defineConfig({
 				{
 					text: "react",
 					items: [
-						{ text: "Index", link: "/packages/react/" },
-						{ text: "One", link: "/packages/react/one" },
-						{ text: "Two", link: "/packages/react/two" },
+						{ text: "基本介绍", link: "/packages/react/" },
 					],
 				},
 			],
 			"/packages/webgl/": [
+				{ text: "基本介绍", link: "/packages/webgl/" },
 				{
-					text: "webgl",
+					text: "html",
 					items: [
-						{ text: "Index", link: "/packages/webgl/" },
-						{ text: "One", link: "/packages/webgl/one" },
-						{ text: "Two", link: "/packages/webgl/two" },
+						{ text: "基本介绍", link: "/packages/html/" },
 					],
 				},
 			],
@@ -171,9 +223,35 @@ export default defineConfig({
 				{
 					text: "algorithm",
 					items: [
-						{ text: "Index", link: "/packages/algorithm/" },
-						{ text: "One", link: "/packages/algorithm/one" },
-						{ text: "Two", link: "/packages/algorithm/two" },
+						{ text: "基本介绍", link: "/packages/algorithm/" },
+					],
+				},
+			],"/packages/dynamic-large-screen/": [
+				{
+					text: "动态大屏",
+					items: [
+						{ text: "基本介绍", link: "/packages/dynamic-large-screen/" },
+					],
+				},
+			],"/packages/low-code/": [
+				{
+					text: "低代码平台",
+					items: [
+						{ text: "基本介绍", link: "/packages/low-code/" },
+					],
+				},
+			],"/packages/admin-framework/": [
+				{
+					text: "中后台管理系统框架",
+					items: [
+						{ text: "基本介绍", link: "/packages/admin-framework/" },
+					],
+				},
+			],"/packages/mini-ui/": [
+				{
+					text: "UI库搭建",
+					items: [
+						{ text: "基本介绍", link: "/packages/mini-ui/" },
 					],
 				},
 			],
@@ -185,5 +263,9 @@ export default defineConfig({
 				link: "https://github.com/zxlfly/CodeNest",
 			},
 		],
+		footer: {
+			message: '创作不易请尊重他人劳动成果，未经允许禁止转载',
+			copyright: 'Copyright © 2024-present zxlfly'
+		  }
 	},
 });

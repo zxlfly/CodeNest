@@ -80,10 +80,6 @@ This is a dangerous warning.
 This is a details block.
 :::
 
-## More
-
-Check out the documentation for the [full list of markdown extensions](https://vitepress.dev/guide/markdown).
-
 ## Unicode Emoji
 
 | **图标** | **描述** | **图标** | **描述** | **图标** | **描述** |
@@ -121,3 +117,9 @@ Check out the documentation for the [full list of markdown extensions](https://v
 | 🌈 | 彩虹2 | 🎡 | 摩天轮 | 🎢 | 过山车 |
 | 🏗️ | 建筑起重机 | 🏰 | 城堡 | 💒 | 婚礼教堂 |
 | 🗽 | 自由女神像 | 🗼 | 埃菲尔铁塔 | 🏰 | 城堡2 |
+
+
+## More
+
+Check out the documentation for the [full list of markdown extensions](https://vitepress.dev/guide/markdown).
+
