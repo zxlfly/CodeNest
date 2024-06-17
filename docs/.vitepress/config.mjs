@@ -18,6 +18,7 @@ handleNestedMenus(packagesData, "web", [
 //   生成nav路由
 const navModelList = getNav(packagesData, [
   { dirName: "web", menuName: "web前端基础" },
+  { dirName: "interview", menuName: "面经分享" },
   { dirName: "engineering", menuName: "工程化" },
   { dirName: "vue", menuName: "vue" },
   { dirName: "react", menuName: "react" },

@@ -15,26 +15,14 @@ hero:
       link: /markdown-examples
 
 features:
-  # - icon: { src:  /img/HTML.svg  }
-  #   title: Html
-  #   details: web前端入门必备三剑客之一，用于创建网页结构的标记语言。
-  #   link: /packages/html/
-  # - icon: { src:  /img/css.svg  }
-  #   title: Css
-  #   details: web前端入门必备三剑客之一，用于样式和布局网页元素的标记语言。
-  #   link: /packages/css/
-  # - icon: { src:  /img/javascript.svg  }
-  #   title: Javascript
-  #   details: web前端入门必备三剑客之一，创建动态和交互式网页内容的脚本语言。
-  #   link: /packages/javascript/
-  # - icon: { src:  /img/typescript.svg  }
-  #   title: Typescript
-  #   details: JavaScript的超集，支持静态类型和面向对象编程
-  #   link: /packages/typescript/
   - icon: { src:  /img/web-icon.svg  }
     title: web前端基础
     details: 包含HTML、CSS、JavaScript、typescript、http等。
     link : /packages/web/
+  - icon: { src:  /img/interview-icon.svg  }
+    title: 面经分享
+    details: 面经分享
+    link: /packages/interview/
   - icon: { src:  /img/engineering.svg  }
     title: 工程化
     details: 通过使用各种工具和流程，对前端开发进行标准化、自动化和优化，以提高团队协作、代码质量和项目交付效率。
