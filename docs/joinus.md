@@ -17,17 +17,17 @@ pnpm dev
 ```
 
 ## 参与贡献
-- 点请确保你已经完成快速上手中的步骤，正常访问，并且本地打包预览正常
-- 点创建新分支 ``git checkout -b username/feature1``，分支名字建议为``username/feat-xxx/username/fix-xxx``
-- 点本地编码，需遵循 开发规范  遵循 Angular Commit Message Format 进行提交（不符合规范的提交将不会被合并）
+- 请确保你已经完成快速上手中的步骤，正常访问，并且本地打包预览正常
+- 创建新分支 ``git checkout -b username/feature1``，分支名字建议为``username/feat-xxx/username/fix-xxx``
+- 本地编码，需遵循 开发规范  遵循 Angular Commit Message Format 进行提交（不符合规范的提交将不会被合并）
 - 在提交之前，建议本地配置好[GPG](https://docs.github.com/en/authentication/managing-commit-signature-verification)，可以在提交之前给Commit添加**GPG**签名
-- 点提交到远程仓库，也就是 Fork 后的仓库，``git push origin branchName``
+- 提交到远程仓库，也就是 Fork 后的仓库，``git push origin branchName``
 (可选) 同步上游仓库dev分支最新代码，``git pull upstream dev``
-- 点打开上游仓库提交 PR
-- 点仓库 Committer 进行 Code Review，并提出意见
-- 点PR 发起人根据意见调整代码（一个分支发起了 PR 后，后续的 commit 会自动同步，不需要重新 PR）
-- 点仓库管理员合并PR    
-- 点贡献流程结束，感谢你的贡献
+- 打开上游仓库提交 PR
+- 仓库 Committer 进行 Code Review，并提出意见
+- PR 发起人根据意见调整代码（一个分支发起了 PR 后，后续的 commit 会自动同步，不需要重新 PR）
+- 仓库管理员合并PR    
+- 贡献流程结束，感谢你的贡献
 
 ## 关于文档编辑
 ### 添加新的模块
