@@ -4,10 +4,15 @@ import {
   readPackagesDir,
   handleNestedMenus,
   getNav,
+  generateKeywords
 } from "./use-init-sidebar.mjs";
 const packagesRoot = path.join(__dirname, "../packages");
 // 生成路由菜单结构
 const packagesData = readPackagesDir(packagesRoot);
+// 生成网站关键词，可以新增补充一些一级目录名称外的关键词
+const keywords = generateKeywords(packagesData,[
+  '八股文','web前端','面试', '学习','图形','轮子','动态大屏','动态表单','低代码平台','工程化','组件库','中后台管理系统','中后台管理系统框架','中后台管理框架'
+]);
 //   处理需要集中整合在一起的模块，如有多个可以多次调用
 handleNestedMenus(packagesData, "web", [
   "html",
@@ -44,15 +49,14 @@ export default defineConfig({
       "meta",
       {
         name: "keywords",
-        content:
-          "八股文,web,web前端,面试,学习,图形,webgl,webgpu,vue,vue2,vue3,react,uniapp",
+        content:keywords,
       },
     ],
     [
       "meta",
       {
         name: "description",
-        content: "八股文,web,web前端,面试,学习,图形",
+        content: "一个学习分享的网站",
       },
     ],
     [

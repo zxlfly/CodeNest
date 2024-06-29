@@ -1,10 +1,10 @@
 import fs from 'fs'
 import path from 'path'
-
 /**
- * 生成菜单路由
- * @param {*} rootDir 读取文件目录结构的外层目录路径
- * @returns result  目录树生成的菜单结构
+ * 读取指定目录下的所有文件和子文件夹，生成菜单路由
+ *
+ * @param rootDir 指定的根目录路径
+ * @returns 目录树生成的菜单结构
  */
 function readPackagesDir(rootDir) {
 	const result = {};
@@ -42,8 +42,10 @@ function readPackagesDir(rootDir) {
 }
 /**
  * 匹配固定格式命名的文件名
- * @param {*} str 需要匹配的字符串
- * @returns 匹配结果
+ *
+ * @param str 需要匹配的字符串
+ * @returns 返回匹配结果数组（如果没有匹配项则返回null）
+ * 数组的第一个元素为整个匹配项，第二个元素为_sort后的第一个数字，第三个元素为第一个数字后的所有内容
  */
 function getName(str){
     const match = str.match(/_sort\.(\d+)_(.+)/);
@@ -101,9 +103,11 @@ function resetName(a){
 }
 /**
  * 将子集添加到父级中，更新路由
- * @param {Object} menus 当前路由对象
- * @param {string} far 父级文件夹的名称
- * @param {*} children 自己文件夹的名称数组
+ *
+ * @param menus 当前路由对象
+ * @param far 父级文件夹的名称
+ * @param children 子文件夹的名称数组
+ * @returns 无返回值，函数会直接修改传入的 menus 对象
  */
 function handleNestedMenus(menus,far,children){
     // 找到对应的父级far
@@ -139,9 +143,11 @@ function handleNestedMenus(menus,far,children){
     }
 }
 /**
- * 生成nav路由
- * @param {*} menus 目录菜单
+ * 获取导航数据
+ *
+ * @param menus 目录菜单
  * @param {[dirName:string,menuName:string]} list 需要展示的目录名
+ * @returns 返回导航数据数组
  */
 function getNav (menus, list){
     let res = []
@@ -159,6 +165,27 @@ function getNav (menus, list){
     }
     return res
 }
+/**
+ * 生成关键词
+ *
+ * @param packagesData 路由菜单结构对象
+ * @param keywordsArr 路由一级菜单以外补充的关键词，飞必传
+ * @returns 返回由关键词组成的字符串，关键词之间用逗号分隔
+ */
+function generateKeywords(packagesData,keywordsArr=[]){
+    try {
+        let keywords = new Set(keywordsArr)
+        Object.keys(packagesData).forEach(key =>{
+            let cur = key.split('/packages/')[1]
+            let keyword = cur.substring(0, cur.length-1)
+            keywords.add(keyword)
+            })
+        return Array.from(keywords).join(',')
+    } catch (error) {
+        console.log(error);
+        return keywordsArr.join(',')
+    }
+}
 export {
-    readPackagesDir,getName,handleNestedMenus,getNav
+    readPackagesDir,getName,handleNestedMenus,getNav,generateKeywords
 }
