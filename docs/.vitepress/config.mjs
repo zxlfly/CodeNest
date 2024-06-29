@@ -34,7 +34,7 @@ const navModelList = getNav(packagesData, [
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
   title: "累了就休息下吧",
-  lang: "zh-cn",
+  lang: "zh-CN",
   base: "/CodeNest/", // 项目的根路径
   ignoreDeadLinks: false, // 构建时会忽略md中的外链
   markdown: {
@@ -73,6 +73,14 @@ export default defineConfig({
     logo: "https://avatars.githubusercontent.com/u/26324442?s=96&v=4",
     lastUpdatedText: "更新时间",
     outlineTitle: "目录",
+    docFooter: {
+       prev: '上一篇', 
+       next: '下一篇',
+    },
+    darkModeSwitchLabel:"外观",
+    sidebarMenuLabel:"菜单",
+    lightModeSwitchTitle:"切换到日间模式",
+    darkModeSwitchTitle:"切换到夜间模式" ,
     nav: [
       { text: "首页", link: "/" },
       { text: "参与进来", link: "/joinus" },
