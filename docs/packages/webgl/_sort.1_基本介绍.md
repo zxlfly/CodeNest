@@ -1,4 +1,4 @@
-# 由来背景
+## 由来背景
 WebGL（Web Graphics Library）是一种基于JavaScript API的图形渲染技术，用于在Web浏览器上实时渲染3D和2D图形。它是Web标准的一部分。
 WebGL的工作原理是将JavaScript代码与计算机的图形硬件进行直接交互，利用GPU进行高效的图形处理。它使用着色器（Shader）编程语言来定义图形的外观和行为，可以实现复杂的光照效果、纹理映射、变换等功能。
 WebGL在游戏开发、数据可视化、虚拟现实和增强现实等领域具有广泛的应用。
@@ -43,3 +43,12 @@ GLSL 的中文意思是 OpenGL 着色语言，英文全称是 OpenGL Shading Lan
    - 可以控制
 
 对顶点信息的变换操作既可以在 JavaScript 中进行，也可以在着色器程序中进行。通常我们都是在 JavaScript 中生成一个包含了所有变换的最终变换矩阵，然后将该矩阵传递给着色器，利用 GPU 并行计算优势对所有顶点执行变换。
+## 开发环境配置
+编辑器推荐使用vscode，结合相应的插件配合使用。
+
+- WebGL GLSL Editor：支持webgl代码高亮，语法提示等。
+- Shader languages support for VS Code：着色器语言支持
+- vite-plugin-glsl：vite插件
+   - 着色器代码在glsl文件中编写
+   - import进js代码中
+- WGSL Literal：模板字符串中进行 wgsl 代码高亮，需要加上模板字符串前置块注释
