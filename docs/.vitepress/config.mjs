@@ -9,6 +9,7 @@ import {
 const packagesRoot = path.join(__dirname, "../packages");
 // 生成路由菜单结构
 const packagesData = readPackagesDir(packagesRoot);
+// console.log(packagesData);
 // 生成网站关键词，可以新增补充一些一级目录名称外的关键词
 const keywords = generateKeywords(packagesData,[
   '八股文','web前端','面试', '学习','图形','轮子','动态大屏','动态表单','低代码平台','工程化','组件库','中后台管理系统','中后台管理系统框架','中后台管理框架'
