@@ -139,7 +139,7 @@ function handleNestedMenus(menus,far,children){
                             items: menus[element],
                         }
                         f[find+i]=cur
-                        console.log(cur);
+                        // console.log(cur);
                         // f.push(menus[element])
                     }
                 })
