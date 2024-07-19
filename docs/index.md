@@ -26,7 +26,7 @@ features:
   - icon: { src:  /img/engineering.svg  }
     title: 工程化
     details: 通过使用各种工具和流程，对前端开发进行标准化、自动化和优化，以提高团队协作、代码质量和项目交付效率。
-    link: /packages/engineering/
+    link: /packages/engineering/开始.md
   - icon: { src:  /img/Vue.svg  }
     title: vue
     details: web前端主流的开发框架之一，由尤雨溪个人主导开发。
@@ -54,7 +54,7 @@ features:
   - icon: { src:  /img/admin-framework.svg  }
     title: 中后台管理系统框架
     details: 从0到1搭建一个中后台框架，基于Vue3。
-    link: /packages/admin-framework/
+    link: /packages/admin-framework/_sort.1_基本介绍
   - icon: { src:  /img/mini-ui.svg  }
     title: 组件库搭建
     details: 从0到1搭建一个UI库。

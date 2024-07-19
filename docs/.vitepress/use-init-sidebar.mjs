@@ -37,6 +37,7 @@ function readPackagesDir(rootDir) {
 		});
 	  }
 	});
+    menuSort(result)
     resetName(result)
 	return result;
 }
@@ -56,6 +57,22 @@ function getName(str){
  * @param {*} a 路由菜单名
  */
 function resetName(a){
+    Object.keys(a).forEach(key=>{
+        let arr = a[key]
+        if(arr&&arr.length>0){
+            arr.forEach(item=>{
+                let atext = item.text
+                if(atext){
+                    let am = getName(atext)
+                    if(am&&am.length==3){
+                        item.text = am[2]
+                    }
+                }
+            })
+        }
+    })
+}
+function menuSort(a){
     Object.keys(a).forEach(key=>{
         let arr = a[key]
         if(arr&&arr.length>1){
@@ -82,20 +99,6 @@ function resetName(a){
                     return flagA -flagB
                 }else{
                     return a>b
-                }
-            })
-        }
-    })
-    Object.keys(a).forEach(key=>{
-        let arr = a[key]
-        if(arr&&arr.length>1){
-            arr.forEach(item=>{
-                let atext = item.text
-                if(atext){
-                    let am = getName(atext)
-                    if(am&&am.length==3){
-                        item.text = am[2]
-                    }
                 }
             })
         }
@@ -129,12 +132,14 @@ function handleNestedMenus(menus,far,children){
                 const element = mkeys[index];
                 children.forEach((c,i) =>{
                     if(`/packages/${c}/`==element){
-                        f[find+i]={
+                        let cur = {
                             text: c,
                             collapsible: true,
                             collapsed: false,
                             items: menus[element],
                         }
+                        f[find+i]=cur
+                        console.log(cur);
                         // f.push(menus[element])
                     }
                 })
