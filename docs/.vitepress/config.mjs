@@ -21,6 +21,10 @@ handleNestedMenus(packagesData, "web", [
   "javascript",
   "typescript",
 ]);
+handleNestedMenus(packagesData, "engineering", [
+  "vite",
+  "webpack",
+]);
 //   生成nav路由
 const navModelList = getNav(packagesData, [
   { dirName: "web", menuName: "web前端基础" },

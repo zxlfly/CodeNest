@@ -1,0 +1,23 @@
+# 步骤
+
+- 创建项目vue3+ts+vite+element-plus
+- 安装eslint+prettier+stylelint
+- 安装husky+lint-staged+commitlint
+- 创建配置环境配置文件
+- vite配置
+  - 抽离配置项
+  - 配置别名
+  - 自动导入
+  - ...
+- mock配置
+- 请封装
+- 配置路由
+- 按钮权限
+- 通用组件创建
+  - svg-icon
+- 面包屑导航
+- 页面刷新
+- 全屏
+- 暗黑模式
+- 主题配置
+- 国际化
