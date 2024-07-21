@@ -16,7 +16,7 @@ hero:
 
 features:
   - icon: { src:  /img/web-icon.svg  }
-    title: web前端基础
+    title: web前端基本功
     details: 包含HTML、CSS、JavaScript、typescript、http等。
     link : /packages/web/
   - icon: { src:  /img/interview-icon.svg  }
