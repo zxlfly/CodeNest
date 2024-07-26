@@ -13,7 +13,7 @@
 
 ### 路由
 
-在通过vite搭建项目的时候，是可以选择安装[Vue router]([路由](https://router.vuejs.org/zh/introduction.html))的，这里演示的是单独手动安装。
+在通过vite搭建项目的时候，是可以选择安装[Vue router](https://router.vuejs.org/zh/introduction.html)的，这里演示的是单独手动安装。
 
 ```bash
 pnpm add vue-router@4
@@ -24,7 +24,7 @@ pnpm add vue-router@4
 ### 状态管理
 
 在通过vite搭建项目的时候，是可以选择安装[Pinia](https://pinia.vuejs.org/zh/getting-started.html)的，这里演示的是单独手动安装。
-在后面的[配置路由](/packages/admin-framework/_sort.6_5.配置路由)章节会详细介绍怎么使用。
+在后面的[配置路由]章节会详细介绍怎么使用。
 
 ```bash
 pnpm add pinia
