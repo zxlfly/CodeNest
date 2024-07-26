@@ -50,7 +50,103 @@
 
 ```
 
-### 主体代码
+**reset.css**:
+
+```css
+@charset 'utf-8';
+
+* {
+    box-sizing: border-box;
+}
+
+/* 这些元素都建议重新初始化 */
+body,
+div,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+tr,
+td,
+th,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+hr,
+br,
+img,
+table,
+input,
+form,
+a,
+p,
+textarea {
+    padding: 0;
+    margin: 0;
+    font-family: Arial, "Microsoft YaHei", "宋体";
+}
+
+/* 去掉列表默认排列 */
+ul,
+ol,
+li {
+    list-style: none;
+}
+
+/* 去掉底部横线 */
+
+/* 把a元素更改设置成块级元素，这个根据实际情况决定要不要 */
+a {
+    text-decoration: none;
+    display: block;
+}
+
+/* img标签要清除border。 */
+
+/* display设为block设置为块级元素，默认为display:inline;
+存在下边线多出4px状况,所以一般设为block */
+img {
+    border: 0;
+    display: block;
+}
+
+/* 清除浮动破坏带来的塌陷问题 */
+
+/* 基本不会用到，现在主流是flex */
+
+/* 清除浮动的兼容IE */
+.clearfloat {
+    zoom: 1;
+}
+
+.clearfloat::after {
+    display: block;
+    clear: both;
+    content: "";
+    visibility: hidden;
+    height: 0;
+}
+```
+
+**index.scss**:
+
+```css
+@use "./common/reset";
+@use "./common/variables";
+```
+
+**main.ts**:
+
+```typescript
+import "./assets/style/index.scss"
+```
+
+### layout主体代码
 
 基础的布局代码，不涉及暗黑模式等功能。
 
