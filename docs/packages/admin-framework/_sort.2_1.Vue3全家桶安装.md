@@ -45,7 +45,10 @@ pnpm add element-plus
 
 首先你需要安装**unplugin-vue-components** 和 **unplugin-auto-import**这两款插件  
 
-`pnpm add -D unplugin-vue-components unplugin-auto-import`  
+```bash
+pnpm add -D unplugin-vue-components unplugin-auto-import
+```
+
 然后把下列代码插入到你的 `Vite` 的配置文件中
 
 ```js

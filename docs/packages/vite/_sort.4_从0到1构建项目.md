@@ -40,11 +40,17 @@ Done. Now run:
 - 添加新的源：``nrm add 源``
 - 删除源：``nrm del 源``
 
+## 开发代码规范配置：前言
+
+如果没有很强的自定义要求，一般搭建项目可以使用第三方封装配置好的规则，然后针对自己项目需求调整下即可。例如：
+
+- 官方推荐的: [create-vue](https://github.com/vuejs/create-vue)
+- 第三方社区方案: [antfu/eslint-config](https://github.com/antfu/eslint-config)
+
 ## 开发代码规范配置：[ESLint](https://eslint.org/)
 
 ESLint 是一种用于识别和报告 ECMAScript/JavaScript 代码中发现的模式的工具，目的是使代码更加一致并避免错误。  
-这里要说明下，在准备这篇文章的时候eslint刚好是迎来的大版本的更新，出现了比较多的变化，[eslint9以前版本的配置可以参考这个](https://github.com/zxlfly/Custom-project-configuration)。  
-目前很多插件都还没有适配eslint9，这里的配置后续会不断的完善调整。
+这里要说明下，在准备这篇文章的时候eslint刚好是迎来的大版本的更新，出现了比较多的变化，[eslint9以前版本的配置可以参考这个](https://github.com/zxlfly/Custom-project-configuration)。
 
 - 由于eslint的大版本更新，不再支持v18.18.0以下版本的node，本文章使用的版本是22.0.0
 - 安装：``pnpm add eslint -D``
@@ -313,7 +319,7 @@ Prettier 是一款功能强大的代码格式化程序。
 
 - 由于eslint的大版本更新，不再支持v18.18.0以下版本的node，本文章使用的版本是22.0.0
 - 安装：``pnpm add  stylelint -D``
-- 增加scss支持``pnpm add stylelint-scss stylelint-config-standard stylelint-config-standard-scss stylelint-config-recommended-vue -D``
+- 增加scss支持``pnpm add scss stylelint-scss stylelint-config-standard stylelint-config-standard-scss stylelint-config-recommended-vue -D``
 - 如果需要也可以安装一些``postcss``相关插件，本示例中没有使用。
 ``pnpm add sass sass-loader stylelint postcss postcss-scss postcss-html stylelint-config-prettier stylelint-config-recess-order stylelint-config-recommended-scss stylelint-config-standard stylelint-config-standard-vue stylelint-scss stylelint-order stylelint-config-standard-scss -D``
 - 如果项目中使用的原子化css的方案，不写css，stylelint就没有必要安装。
@@ -395,7 +401,7 @@ module.exports = {
 }
 ```
 
-## 开发工具 vscode 配置
+## 开发代码规范配置：vscode配置
 
 ### .vscode/extensions.json插件相关
 
