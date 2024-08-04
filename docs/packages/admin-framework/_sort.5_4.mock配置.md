@@ -1,7 +1,6 @@
 # mock配置
 
-vite 的数据模拟插件，是基于 vite.js 开发的。 并同时支持本地环境和生产环境。 Connect 服务中间件在本地使用，mockjs 在生产环境中使用。  
-一般的我们只是在开发环境使用使用，但是有时候可能也需要支持部署后使用，是否需要根据你的项目需求决定，这里会都支持。
+一般的我们只是在开发环境使用使用。虽然`vite-plugin-mock`最新3.x版本文档说支持生产模式，但是并不支持。如果需要使用需要降级到2.x版本。
 
 ## 安装
 
@@ -175,69 +174,17 @@ onMounted(() => {
 
 ## 生产环境配置
 
-**安装依赖插件：**
+这个库虽然文档上面说支持生产模式使用，其实并不支持了，如果需要使用就需要降级不能使用3.x版本。
 
-```bash
-pnpm add mockjs
-```
-
-### src下创建mockProdServer.ts 文件
+## vite配置抽离
 
 ```ts
-//  mockProdServer.ts
-import { createProdMockServer } from 'vite-plugin-mock/client'
-
-// 逐一导入您的mock.ts文件
-// 如果使用vite.mock.config.ts，只需直接导入文件
-// 可以使用 import.meta.glob功能来进行全部导入
-import userModule from './mock/user'
-
-export function setupProdMockServer() {
-  createProdMockServer([...userModule])
-}
-```
-
-### vite.config.ts配置
-
-```ts
-import { UserConfigExport, ConfigEnv } from 'vite'
-import { viteMockServe } from 'vite-plugin-mock'
-export default ({ command }: ConfigEnv): UserConfigExport => {
-  return {
-    plugins: [
-      viteMockServe({
-        mockPath: 'src/mock',
-        // 根据项目配置。可以配置在.env文件
+import { viteMockServe } from "vite-plugin-mock"
+export default function useMock() {
+    return viteMockServe({
+        mockPath: "src/mock",
         enable: true,
-      }),
-    ],
-  }
-}
-```
-
-### main.ts新增配置
-
-```ts
-// production mock server
-if (process.env.NODE_ENV === "production") {
-    import("./mockProdServer").then(({ setupProdMockServer }) => {
-        setupProdMockServer()
+        logger: true,
     })
 }
 ```
-
-### 生产环境测试
-
-**打包：**
-
-```bash
-pnpm build
-```
-
-**启动：**
-
-```bash
-pnpm preview
-```
-
-## vite配置抽离
