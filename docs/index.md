@@ -73,6 +73,14 @@ const members = [
       { icon: 'github', link: 'https://github.com/zxlfly' },
     ]
   },
+   {
+    avatar: 'https://avatars.githubusercontent.com/u/43475070?v=4&size=64',
+    name: 'zuimenggucheng',
+    title: 'crew',
+    links: [
+      { icon: 'github', link: 'https://github.com/zuimenggucheng' },
+    ]
+  },
 ]
 </script>
 &nbsp;
