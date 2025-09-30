@@ -18,7 +18,7 @@ features:
   - icon: { src:  /img/web-icon.svg  }
     title: web前端基本功
     details: 包含HTML、CSS、JavaScript、typescript、http等。
-    link : /packages/web/
+    link : /packages/web/开始.md
   - icon: { src:  /img/interview-icon.svg  }
     title: 面经分享
     details: 面经分享
@@ -38,7 +38,7 @@ features:
   - icon: { src:  /img/webgl.svg  }
     title: Webgl
     details: 基于JavaScript的图形库，用于在Web浏览器中实现3D图形渲染。
-    link : /packages/webgl/_sort.1_基本介绍
+    link : /packages/webgl/_sort.1_1.基本介绍.md
   - icon: { src:  /img/suanfa.svg  }
     title: 算法
     details: 加深对编程语言和数据结构的理解，培养逻辑思维。
@@ -59,6 +59,10 @@ features:
     title: 组件库搭建
     details: 从0到1搭建一个UI库。
     link: /packages/mini-ui/
+  - icon: { src:  /img/QT.svg  }
+    title: PySide6
+    details: 使用Python开发GUI程序。
+    link: /packages/pyside6/_sort.1_1.开始
 ---
 
 <script setup>
