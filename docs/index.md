@@ -76,7 +76,7 @@ const members = [
    {
     avatar: 'https://avatars.githubusercontent.com/u/43475070?v=4&size=64',
     name: 'zuimenggucheng',
-    title: 'crew',
+    title: 'Contributor',
     links: [
       { icon: 'github', link: 'https://github.com/zuimenggucheng' },
     ]
