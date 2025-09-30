@@ -17,6 +17,6 @@
     "@commitlint/cli": "^19.3.0",
     "@commitlint/config-conventional": "^19.2.2",
     "husky": "^9.0.11",
-    "vitepress": "^1.2.3"
+    "vitepress": "2.0.0-alpha.12"
   }
 }
