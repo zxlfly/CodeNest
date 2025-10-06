@@ -1,16 +1,16 @@
 # 前端项目搭建流程
 
-本示例只完成基础骨架搭建，[想查看完整搭建过程请参考本站中其他部分](/packages/engineering/%E5%BC%80%E5%A7%8B.html)  
+本示例只完成基础骨架搭建，[想查看完整搭建过程请参考本站中其他部分](/packages/engineering/%E5%BC%80%E5%A7%8B.html)
 
 ## 初始化
 
-本示例使用``vue3 + ts``搭建。
+本示例使用`vue3 + ts`搭建。
 
-- 执行``pnpm create vite``  
+- 执行`pnpm create vite`
 - 命令行选择项：
 
 ```bash
-PS C:\code> pnpm create vite  
+PS C:\code> pnpm create vite
 √ Project name: ... demo
 √ Select a framework: » Vue
 √ Select a variant: » TypeScript
@@ -24,21 +24,21 @@ Done. Now run:
   pnpm run dev
 ```
 
-- 进入项目根目录，执行``pnpm install``
-- 执行``pnpm run dev``启动项目，访问``http://localhost:5173/``即可看到效果。
+- 进入项目根目录，执行`pnpm install`
+- 执行`pnpm run dev`启动项目，访问`http://localhost:5173/`即可看到效果。
 
 ## 源的设置
 
 在安装初始化过程中，可能由于网络原因导致失败或者很慢，可以使用下镜像源。  
 手动的管理源比较麻烦，在某些镜像源到期时也能更方便的切换管理。
 
-### 源管理工具nrm
+### 源管理工具 nrm
 
-- 安装nrm：``npm install -g nrm``
-- 查看可用源：``nrm ls``
-- 切换源：``nrm use 源``
-- 添加新的源：``nrm add 源``
-- 删除源：``nrm del 源``
+- 安装 nrm：`npm install -g nrm`
+- 查看可用源：`nrm ls`
+- 切换源：`nrm use 源`
+- 添加新的源：`nrm add 源`
+- 删除源：`nrm del 源`
 
 ## 开发代码规范配置：前言
 
@@ -49,44 +49,33 @@ Done. Now run:
 
 ## 开发代码规范配置：[ESLint](https://eslint.org/)
 
-ESLint 是一种用于识别和报告 ECMAScript/JavaScript 代码中发现的模式的工具，目的是使代码更加一致并避免错误。  
-这里要说明下，在准备这篇文章的时候eslint刚好是迎来的大版本的更新，出现了比较多的变化，[eslint9以前版本的配置可以参考这个](https://github.com/zxlfly/Custom-project-configuration)。
+ESLint 是一种用于识别和报告 ECMAScript/JavaScript 代码中发现的模式的工具，目的是使代码更加一致并避免错误。
 
-- 由于eslint的大版本更新，不再支持v18.18.0以下版本的node，本文章使用的版本是22.0.0
-- 安装：``pnpm add eslint -D``
-- 初始化配置：``npx eslint --init``
+- eslint9 版本更新，不再支持 v18.18.0 以下版本的 node，本文章使用的版本是 v23.11.0
+- 安装以及初始化配置：`npx eslint --init`
 - 命令行选择项
 
 ```BASH
+√ What do you want to lint? · javascript
 √ How would you like to use ESLint? · problems
 √ What type of modules does your project use? · esm
 √ Which framework does your project use? · vue
-√ Does your project use TypeScript? · typescript
-√ Where does your code run? · browser
+√ Does your project use TypeScript? · No / Yes
+√ Where does your code run? · browser, node
+√ Which language do you want your configuration file be written in? · js
 The config that you've selected requires the following dependencies:
 
-eslint@9.x, globals, @eslint/js, typescript-eslint, eslint-plugin-vue
+eslint, @eslint/js, globals, typescript-eslint, eslint-plugin-vue
 √ Would you like to install them now? · No / Yes
 √ Which package manager do you want to use? · pnpm
 ```
 
-- 接着安装些vue3环境代码校验插件(可以参考vue官网文档搭建)
-- 让所有与prettier规则存在冲突的Eslint rules失效，并使用prettier进行代码检查
-  - ``eslint-config-prettier``
-  - ``eslint-plugin-import``
-  - ``eslint-plugin-node``
-- 运行更漂亮的Eslint，使prettier规则优先级更高，Eslint优先级低
-  - ``eslint-plugin-prettier``
-  - vue.js的Eslint插件（查找vue语法错误，发现错误指令，查找违规风格指南
-  - ``eslint-plugin-vue``
-- 该解析器允许使用Eslint校验所有babel code
-  - ``@babel/eslint-parser``
-- ``pnpm install -D eslint-plugin-import eslint-plugin-vue eslint-plugin-prettier eslint-config-prettier eslint-plugin-node @babel/eslint-parser``
-- ``package.json``中添加运行脚本：
+目前 eslint 版本通过上面的初始化之后，会自动生成一个配置文件，且根据我们选择的`vue、ts`生成好对应的配置。  
+我们只需要在`package.json`中添加运行脚本：
 
 ```js
   "scripts": {
-    "lint:eslint": "eslint src/**/*.{ts,vue} --cache --fix"
+    "lint:eslint": "eslint src/**/*.{js,ts,vue,html} --cache --quiet --fix",
   },
 ```
 
@@ -112,8 +101,8 @@ export default [
 ];
 ```
 
-在此示例中，配置数组仅包含一个配置对象。配置对象启用两个规则：semi和prefer-const。这些规则适用于使用此配置文件的 ESLint 处理的所有文件。  
-如果你的项目没有"type":"module"在其package.json文件中指定，那么eslint.config.js必须采用 CommonJS 格式，例如：
+在此示例中，配置数组仅包含一个配置对象。配置对象启用两个规则：semi 和 prefer-const。这些规则适用于使用此配置文件的 ESLint 处理的所有文件。  
+如果你的项目没有"type":"module"在其 package.json 文件中指定，那么 eslint.config.js 必须采用 CommonJS 格式，例如：
 
 ```JS
 // eslint.config.js
@@ -152,7 +141,7 @@ module.exports = [
 ESLint 支持三种严重程度：
 
 - `"off"`（`0`）：不运行该规则。
-- `"warn"`（`1`）：运行规则，但不会根据其违规情况以非零状态代码退出（不包括[--max-warnings标志](https://eslint.org/docs/latest/use/command-line-interface#--max-warnings)）
+- `"warn"`（`1`）：运行规则，但不会根据其违规情况以非零状态代码退出（不包括[--max-warnings 标志](https://eslint.org/docs/latest/use/command-line-interface#--max-warnings)）
 - `"error"`( `2`)：运行规则，如果产生任何违规行为，则以非零状态代码退出
 
 有关配置规则的文档，请参阅[配置规则](https://eslint.org/docs/latest/use/configure/rules)。
@@ -163,137 +152,64 @@ ESLint 支持三种严重程度：
 
 ### 最终的配置对象
 
+这个配置对象主体是自动生成的，如果我们想针对`VUE`代码增加自定义配置，可以直接在最后一个`VUE`的配置对象中添加`rules`对象，如果是想针对全局所有校验文件添加自定义配置，则可以在这个数组末尾添加一个新的对象，里面添加`rules`对象即可。
+
 ```JS
+import js from "@eslint/js"
 import globals from "globals"
-import pluginJs from "@eslint/js"
 import tseslint from "typescript-eslint"
 import pluginVue from "eslint-plugin-vue"
-import { includeIgnoreFile } from "@eslint/compat"
-import path from "node:path"
-import { fileURLToPath } from "node:url"
-const __filename = fileURLToPath(import.meta.url)
-const __dirname = path.dirname(__filename)
-const gitignorePath = path.resolve(__dirname, ".gitignore")
-import configPrettier from "eslint-config-prettier"
-import pluginPrettier from "eslint-plugin-prettier"
-import eslintPluginImport from "eslint-plugin-import"
-import eslintPluginNode from "eslint-plugin-node"
-// import babelEslintParse from "@babel/eslint-parse"
-// 不支持ESM
-import pkg from "vue-eslint-parser"
-const { parser: vueEslintparser } = pkg
+import { defineConfig } from "eslint/config"
+// 这个配置在后面的prettier中会讲到，这里先放一个完整版的
+import eslintPluginPrettierRecommended from "eslint-plugin-prettier/recommended"
 
-export default [
-    // 关联gitignore里面的配置
-    includeIgnoreFile(gitignorePath),
+export default defineConfig([
     {
-        ignores: ["build/**/*", "cache/**/*", "node_modules/**/*"],
-    },
-    {
-        files: ["**/*.{js,mjs,cjs,ts,vue}"],
+        files: ["**/*.{js,mjs,cjs,ts,mts,cts,vue}"],
+        plugins: { js },
+        extends: ["js/recommended"],
         languageOptions: {
-            globals: {
-                ...globals.commonjs,
-                ...globals.browser,
-                ...globals.es2025,
-                ...globals.node,
-            },
-            parser: vueEslintparser,
-            parserOptions: {
-                ecmaVersion: "latest",
-                sourceType: "module",
-                parser: "@typescript-eslint/parser",
-                jsxPragma: "React",
-                ecmaFeatures: {
-                    jsx: true,
-                },
-            },
-        },
-        plugins: {
-            prettier: pluginPrettier,
-            import: eslintPluginImport,
-            node: eslintPluginNode,
-        },
-        rules: {
-            ...configPrettier.rules,
-            ...pluginPrettier.configs.recommended.rules,
-            /*
-             * "off" 或 0    ==>  关闭规则
-             * "warn" 或 1   ==>  打开的规则作为警告（不影响代码执行）
-             * "error" 或 2  ==>  规则作为一个错误（代码不能执行，界面报错）
-             */
-            "prettier/prettier": "warn",
-            // eslint（https://eslint.bootcss.com/docs/rules/）
-            "no-var": "error", // 要求使用 let 或 const 而不是 var
-            "no-multiple-empty-lines": ["warn", { max: 1 }], // 不允许多个空行
-            "no-console":
-                process.env.NODE_ENV === "production" ? "error" : "off",
-            "no-debugger":
-                process.env.NODE_ENV === "production" ? "error" : "off",
-            "no-unexpected-multiline": "error", // 禁止空余的多行
-            "no-useless-escape": "off", // 禁止不必要的转义字符
-
-            // typeScript (https://typescript-eslint.io/rules)
-            "@typescript-eslint/no-unused-vars": "error", // 禁止定义未使用的变量
-            "@typescript-eslint/prefer-ts-expect-error": "error", // 禁止使用 @ts-ignore
-            "@typescript-eslint/no-explicit-any": "off", // 禁止使用 any 类型
-            "@typescript-eslint/no-non-null-assertion": "off",
-            "@typescript-eslint/no-namespace": "off", // 禁止使用自定义 TypeScript 模块和命名空间。
-            "@typescript-eslint/semi": "off",
-
-            // eslint-plugin-vue (https://eslint.vuejs.org/rules/)
-            "vue/multi-word-component-names": "off", // 要求组件名称始终为 “-” 链接的单词
-            "vue/script-setup-uses-vars": "error", // 防止<script setup>使用的变量<template>被标记为未使用
-            "vue/no-mutating-props": "off", // 不允许组件 prop的改变
-            "vue/attribute-hyphenation": "off", // 对模板中的自定义组件强制执行属性命名样式
-            // "vue/v-on-event-hyphenation": [
-            //     "error",
-            //     "never",
-            //     { ignore: ["custom-event"] },
-            // ],
-            // "vue/v-on-event-hyphenation": "off",
-            indent: [
-                "error",
-                4,
-                {
-                    ignoredNodes: ["ConditionalExpression", "SwitchCase"],
-                },
-            ],
-            semi: "off",
+            globals: { ...globals.browser, ...globals.node },
         },
     },
-    { languageOptions: { globals: globals.browser } },
-    pluginJs.configs.recommended,
-    ...tseslint.configs.recommended,
-    ...pluginVue.configs["flat/essential"],
+    tseslint.configs.recommended,
+    pluginVue.configs["flat/essential"],
     {
         files: ["**/*.vue"],
         languageOptions: { parserOptions: { parser: tseslint.parser } },
     },
-]
+    eslintPluginPrettierRecommended,
+])
+
+
 ```
+
+### vscode eslint 插件配置
+
+可以通过 vscode 的插件 eslint 插件来辅佐检查错误。这样就可以在编辑时，直观的看到问题。
+![eslint 插件](/md-images/eslint.png)
 
 ## 开发代码规范配置：[prettier](https://prettier.io/docs/en/install.html)
 
 Prettier 是一款功能强大的代码格式化程序。
 
-- 安装：``pnpm install -D eslint-plugin-prettier prettier eslint-config-prettier``
+- 安装：`pnpm install -D eslint-plugin-prettier prettier eslint-config-prettier`
 - 创建配置文件.prettierrc.json
 
 ```json
 {
-    "singleQuote": false,
-    "semi": false,
-    "bracketSpacing": true,
-    "htmlWhitespaceSensitivity": "ignore",
-    "endOfLine": "auto",
-    "trailingComma": "all",
-    "tabWidth": 4,
-    "useTabs": false
+  "singleQuote": false,
+  "semi": false,
+  "bracketSpacing": true,
+  "htmlWhitespaceSensitivity": "ignore",
+  "endOfLine": "auto",
+  "trailingComma": "all",
+  "tabWidth": 4,
+  "useTabs": false
 }
 ```
 
-- 添加.prettierignore忽略文件
+- 添加.prettierignore 忽略文件
 
 ```bash
 /dist/*
@@ -305,86 +221,108 @@ Prettier 是一款功能强大的代码格式化程序。
 /public/*
 ```
 
-- ``package.json``中添加运行脚本：
+- 处理 eslint 冲突问题
+  当 eslint 和 prettier 冲突时，可以`eslint-plugin-prettier`插件来处理，让`eslint` 使用 `prettier` 的代码格式。需要调整 eslint 的配置文件,在数组末尾加入`prettier`配置。
+
+```JS
+import js from "@eslint/js"
+import globals from "globals"
+import tseslint from "typescript-eslint"
+import pluginVue from "eslint-plugin-vue"
+import { defineConfig } from "eslint/config"
+import eslintPluginPrettierRecommended from "eslint-plugin-prettier/recommended"
+
+export default defineConfig([
+    {
+        files: ["**/*.{js,mjs,cjs,ts,mts,cts,vue}"],
+        plugins: { js },
+        extends: ["js/recommended"],
+        languageOptions: {
+            globals: { ...globals.browser, ...globals.node },
+        },
+    },
+    tseslint.configs.recommended,
+    pluginVue.configs["flat/essential"],
+    {
+        files: ["**/*.vue"],
+        languageOptions: { parserOptions: { parser: tseslint.parser } },
+    },
+    eslintPluginPrettierRecommended,
+])
+
+```
+
+- `package.json`中添加运行脚本：
+  根据你的项目需求，添加对应的文件类型！
 
 ```js
   "scripts": {
-    "format": "prettier --write \"./**/*.{html,vue,ts,js,json,md}\"",
+    "format": "prettier --write \"./**/*.{html,vue,ts,js,json}\""
   },
 ```
 
+### vscode prettier 插件配置
+
+配置 vscode prettier 插件，这样当保存文件时，就会自动格式化代码。
+![prettier 插件](/md-images/prettier.png)
+
+插件安装完成之后，还需要配置下 vscode，打开`首选项-设置样式`:
+![vscode 设置](/md-images/vscode-prettier.png)
+
 ## 开发代码规范配置：[stylelint](https://stylelint.io/user-guide/get-started/)
 
-用于检查 CSS 代码风格和错误的工具，也可以安装 vscode 插件配合使用
+用于检查 CSS 代码风格和错误的工具，也可以安装 vscode 插件配合使用。
+如果项目中只是想要有格式化样式的需求，`prettier`就能满足覆盖。如果项目中使用的原子化 css 的方案，不写 css，`stylelint` 就没有必要安装。
+这里默认使用 sass + vue
 
-- 由于eslint的大版本更新，不再支持v18.18.0以下版本的node，本文章使用的版本是22.0.0
-- 安装：``pnpm add  stylelint -D``
-- 增加scss支持``pnpm add scss stylelint-scss stylelint-config-standard stylelint-config-standard-scss stylelint-config-recommended-vue -D``
-- 如果需要也可以安装一些``postcss``相关插件，本示例中没有使用。
-``pnpm add sass sass-loader stylelint postcss postcss-scss postcss-html stylelint-config-prettier stylelint-config-recess-order stylelint-config-recommended-scss stylelint-config-standard stylelint-config-standard-vue stylelint-scss stylelint-order stylelint-config-standard-scss -D``
-- 如果项目中使用的原子化css的方案，不写css，stylelint就没有必要安装。
-- 添加.stylelintrc.cjs配置文件
+- 安装：`pnpm add sass stylelint-config-standard-scss postcss-html stylelint-config-recommended-vue stylelint-order -D`
+  - `stylelint-config-standard-scss`
+    - 插件继承与`stylelint-config-standard`
+      - 如果不使用`scss`，则安装`stylelint-config-standard`
+  - `stylelint-order` 样式顺序
+  - `stylelint-config-recommended-vue`
+    - 捆绑`postcss-html`
+- 如果需要也可以安装一些`postcss`相关插件，本示例中没有使用。
+- 添加 stylelint.config.mjs 配置文件
 
 ```js
-// @see https://stylelint.bootcss.com/
-
-module.exports = {
-    extends: [
-        "stylelint-config-standard", // 配置stylelint拓展插件
-        // "stylelint-config-html/vue", // 配置 vue 中 template 样式格式化
-        "stylelint-config-standard-scss", // 配置stylelint scss插件
-        "stylelint-config-recommended-vue/scss", // 配置 vue 中 scss 样式格式化
-        // "stylelint-config-recess-order", // 配置stylelint css属性书写顺序插件,
-        // "stylelint-config-prettier", // 配置stylelint和prettier兼容
-    ],
-    plugins: ["stylelint-scss"],
-    // overrides: [
-    //     {
-    //         files: ["**/*.(scss|css|vue|html)"],
-    //         customSyntax: "postcss-scss",
-    //     },
-    //     {
-    //         files: ["**/*.(html|vue)"],
-    //         customSyntax: "postcss-html",
-    //     },
-    // ],
-    ignoreFiles: [
-        "**/*.js",
-        "**/*.jsx",
-        "**/*.tsx",
-        "**/*.ts",
-        "**/*.json",
-        "**/*.md",
-        "**/*.yaml",
-        "index.html",
-    ],
-    /**
-     * null  => 关闭该规则
-     * always => 必须
-     */
-    rules: {
-        "value-keyword-case": null, // 在 css 中使用 v-bind，不报错
-        "no-descending-specificity": null, // 禁止在具有较高优先级的选择器后出现被其覆盖的较低优先级的选择器
-        "function-url-quotes": "always", // 要求或禁止 URL 的引号 "always(必须加上引号)"|"never(没有引号)"
-        "no-empty-source": null, // 关闭禁止空源码
-        "selector-class-pattern": null, // 关闭强制选择器类名的格式
-        "property-no-unknown": null, // 禁止未知的属性(true 为不允许)
-        //'block-opening-brace-space-before': 'always', //大括号之前必须有一个空格或不能有空白符
-        "value-no-vendor-prefix": null, // 关闭 属性值前缀 --webkit-box
-        "property-no-vendor-prefix": null, // 关闭 属性前缀 -webkit-mask
-        "selector-pseudo-class-no-unknown": [
-            // 不允许未知的选择器
-            true,
-            {
-                ignorePseudoClasses: ["global", "v-deep", "deep"], // 忽略属性，修改element默认样式的时候能使用到
-            },
-        ],
-        "scss/operator-no-newline-after": null,
+/** @type {import("stylelint").Config} */
+export default {
+  extends: [
+    "stylelint-config-standard-scss",
+    "stylelint-config-recommended-vue",
+  ],
+  plugins: ["stylelint-order"],
+  overrides: [
+    {
+      files: ["**/*.html"],
+      customSyntax: "postcss-html", // 处理 HTML 内嵌 <style> 标签
     },
-}
+  ],
+  rules: {
+    "order/properties-alphabetical-order": true,
+    "value-keyword-case": null, // 在 css 中使用 v-bind，不报错
+    "no-descending-specificity": null, // 禁止在具有较高优先级的选择器后出现被其覆盖的较低优先级的选择器
+    "function-url-quotes": "always", // 要求或禁止 URL 的引号 "always(必须加上引号)"|"never(没有引号)"
+    "no-empty-source": null, // 关闭禁止空源码
+    "selector-class-pattern": null, // 关闭强制选择器类名的格式
+    // "property-no-unknown": null, // 禁止未知的属性(true 为不允许)
+    //'block-opening-brace-space-before': 'always', //大括号之前必须有一个空格或不能有空白符
+    "value-no-vendor-prefix": null, // 关闭 属性值前缀 --webkit-box
+    "property-no-vendor-prefix": null, // 关闭 属性前缀 -webkit-mask
+    "selector-pseudo-class-no-unknown": [
+      // 不允许未知的选择器
+      true,
+      {
+        ignorePseudoClasses: ["global", "v-deep", "deep"], // 忽略属性，修改UI库默认样式的时候能使用到
+      },
+    ],
+    "scss/operator-no-newline-after": true,
+  },
+};
 ```
 
-- 添加.stylelintignore忽略文件
+- 添加.stylelintignore 忽略文件
 
 ```bash
 /node_modules/*
@@ -393,100 +331,11 @@ module.exports = {
 /public/*
 ```
 
-- ``package.json``中添加运行脚本：
+- `package.json`中添加运行脚本：
 
 ```js
 "script":{
-    "lint:css": "stylelint src/**/*.{vue,css,sass,scss} --cache --fix"
-}
-```
-
-## 开发代码规范配置：vscode配置
-
-### .vscode/extensions.json插件相关
-
-没有会提示现下载,根据自己实际使用情况配置。
-
-```JSON
-{
-  "recommendations": [
-  "Vue.volar",
-  "Vue.vscode-typescript-vue-plugin",
-  "dbaeumer.vscode-eslint",
-  "stylelint.vscode-stylelint",
-  "EditorConfig.EditorConfig"
-  ]
-}
-```
-
-### .vscode/settings.json
-
-除了安装 npm 包以外，还需要安装 vscode 对应的两个插件(eslint、prettier)，这样开发的时候配合使用更 方便！主要是针对于 eslint、stylelint、prettier 这些配置的统一。
-
-```JSON
-{
-    "editor.codeActionsOnSave": {
-        "source.fixAll": "explicit",
-        "source.fixAll.eslint": "explicit",
-        "source.fixAll.stylelint": "explicit"
-    },
-    "stylelint.validate": ["css", "less", "scss", "vue"],
-    "eslint.probe": [
-        "javascript",
-        "javascriptreact",
-        "typescript",
-        "typescriptreact",
-        "html",
-        "vue",
-        "markdown",
-        "jsonc"
-    ],
-    "eslint.validate": [
-        "javascript",
-        "javascriptreact",
-        "typescript",
-        "typescriptreact",
-        "html",
-        "vue",
-        "markdown",
-        "jsonc"
-    ],
-    "[markdown]": {
-        "editor.formatOnSave": true
-    },
-    "editor.defaultFormatter": "esbenp.prettier-vscode",
-    "[javascript]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
-    },
-    "[vue]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
-    },
-    "[ts]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
-    },
-    "[less]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
-    },
-    "[scss]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
-    },
-    "editor.fontSize": 16,
-    "editor.cursorBlinking": "expand",
-    "editor.mouseWheelZoom": true,
-    "editor.formatOnPaste": true,
-    "editor.formatOnType": true,
-    "editor.guides.bracketPairs": true,
-    "editor.acceptSuggestionOnEnter": "smart",
-    "editor.suggestSelection": "first",
-    "debug.showBreakpointsInOverviewRuler": true,
-    "editor.formatOnSave": true,
-    "prettier.useTabs": false,
-    "window.zoomLevel": 1,
-    "prettier.tabWidth": 4,
-    "markdown.preview.breaks": true,
-    "explorer.compactFolders": false,
-    "liveServer.settings.donotShowInfoMsg": true,
-    "diffEditor.ignoreTrimWhitespace": false
+    "lint:css": "stylelint src/**/*.{vue,css,scss,html} --cache --quiet --fix",
 }
 ```
 
@@ -494,17 +343,24 @@ module.exports = {
 
 在提交或推送时，自动化 检查提交信息、检查代码 和 运行测试。相关操作配置在对应的钩子中。
 
-- 安装：``pnpm add --save-dev husky``
-- 初始化husky设置``pnpm exec husky init``
-- 执行成功后，会在项目根目录下生成一个.husky文件夹，里面有一个pre-commit文件。``package.json script``中添加如下``"prepare": "husky"``脚本
-- 接着可以通过脚本``echo "npm test" > .husky/pre-commit``或者手动的方式添加钩子。配合``commitlint、lint-staged``自动完成一些我们设置在钩子中的操作。
+- 安装：`pnpm add --save-dev husky`
+- 初始化 husky 设置`pnpm exec husky init`
+- 执行成功后，会在项目根目录下生成一个.husky 文件夹，里面有一个 pre-commit 文件。`package.json script`中添加如下`"prepare": "husky"`脚本
+- 接着可以通过脚本或者手动的方式添加钩子。配合`commitlint、lint-staged`自动完成一些我们设置在钩子中的操作。
+
+```
+@"
+#!/usr/bin/env sh
+pnpm dlx commitlint --edit $1
+"@ > .husky/commit-msg
+```
 
 ### 钩子
 
-- ``commit-msg``: 提交信息钩子
-- ``pre-commit``: 提交前钩子
-- ``pre-push`` : 推送前钩子 
- 
+- `commit-msg`: 提交信息钩子
+- `pre-commit`: 提交前钩子
+- `pre-push` : 推送前钩子
+
 ### 如果执行钩子的时候出现了如下报错：
 
 ```bash
@@ -512,18 +368,19 @@ module.exports = {
 husky - commit-msg script failed (code 126)
 ```
 
-- 先检查下钩子文件的编码格式是不是``UTF-8``，如果不是的需要改成``UTF-8``。  
-- 如果不行，那可能因为是``window``系统下，需要在``git bash``中执行``echo``命令。或者手动创建文件。  
-- 如果手动创建也不行，那就复制一份husky初始化时自动创建的pre-commit文件，然后将其重命名为其他钩子的名称再使用。
+- 先检查下钩子文件的编码格式是不是`UTF-8`，如果不是的需要改成`UTF-8`。
+- 如果不行，那可能因为是`window`系统下，需要在`git bash`中执行`echo`命令。或者手动创建文件。
+  - **建议手动创建，命令的方式出现格式不正确的概率高**
+- 如果手动创建也不行，那就复制一份 husky 初始化时自动创建的 pre-commit 文件，然后将其重命名为其他钩子的名称再使用。
 
 ## 配置 [commitlint](https://commitlint.js.org/#/)
 
-- 安装：``pnpm add --save-dev @commitlint/{cli,config-conventional}``
-  - 这个命令在``window``下可能会报错，需要分开安装``@commitlint/cli``和``@commitlint/config-conventional``
-- 配置husky
-  - 通过脚本``echo "pnpm dlx commitlint --edit \$1" > .husky/commit-msg``或者手动创建配置钩子
-- 添加配置文件``commitlint.config.js``
-  - 可以通过脚本创建``echo "module.exports = {extends: ['@commitlint/config-conventional']}" > commitlint.config.js``
+- 安装：`pnpm add --save-dev @commitlint/{cli,config-conventional}`
+  - 这个命令在`window`下可能会报错，需要分开安装`@commitlint/cli`和`@commitlint/config-conventional`
+- 配置 husky
+  - 通过脚本`echo "pnpm dlx commitlint --edit \$1" > .husky/commit-msg`或者手动创建配置钩子
+- 添加配置文件`commitlint.config.js`
+  - 可以通过脚本创建`echo "module.exports = {extends: ['@commitlint/config-conventional']}" > commitlint.config.js`
   - 需要注意的是如果 package.json 中设置"type": "module"，那么需要将后缀改为 cjs
 
 ```JS
@@ -554,52 +411,89 @@ module.exports = {
 };
 ```
 
-### husky的commit-msg钩子
+### husky 的 commit-msg 钩子
 
 ```bash
 #!/usr/bin/env sh
-. "$(dirname -- "$0")/_/husky.sh"
-
-npx --no -- commitlint --edit $1
+pnpm dlx commitlint --edit $1
 ```
 
-## 配置 [lint-staged](https://commitlint.js.org/#/)
+## 配置 [lint-staged](https://github.com/lint-staged/lint-staged/)
 
-针对暂存的 git 文件运行 linters，不要让 💩 进入你的代码库！ 最后在husky的commit-msg钩子中添加npx --no -- commitlint --edit $1即可，也可以在scripts中增加commitlint的命令，这里使用pnpm run commitlint
+针对暂存的 git 文件运行 linters，不要让 💩 进入你的代码库！ 最后在 husky 的 commit-msg 钩子中添加 npx --no -- commitlint --edit $1 即可，也可以在 scripts 中增加 commitlint 的命令，这里使用 pnpm run commitlint
 
-- 安装：``pnpm add -D lint-staged``
-- 配置husky
-  - 通过脚本``npx husky add .husky/pre-commit "npx lint-staged"``或者手动创建配置钩子
-- ``package.json``中添加运行脚本：
+- 安装：`pnpm add -D lint-staged`
+- 配置 husky
+  - 通过脚本或者手动创建配置钩子
+
+```
+@"
+#!/usr/bin/env sh
+pnpm dlx lint-staged
+"@ > .husky/pre-commit
+```
+
+- `package.json`中添加运行脚本：
 
 ```JS
 // package.json中添加配置
 "lint-staged": {
-  "src/**/{*.vue,*.js,*.ts,*.jsx,*.tsx}": "eslint --fix",
-  "src/**/{*.scss,*.css}": "stylelint --fix"
+    "src/**/*.{vue,js,ts,html}": "pnpm lint:eslint",
+    "src/**/*.{scss,css,html,vue}": "pnpm lint:css",
+    "src/**/*.{js,ts,vue,html}": "pnpm format"
 }
 ```
 
-### husky的pre-commit钩子
+### husky 的 pre-commit 钩子
 
 ```bash
 #!/usr/bin/env sh
-. "$(dirname -- "$0")/_/husky.sh"
-
-# npx --no-install lint-staged
+pnpm dlx lint-staged
 ```
 
 ## 关于打包兼容性的问题
 
-vite相对来说需要手动配置的内容很少，如果有需求参考前面的[常见配置](/packages/vite/_sort.2_常见配置.html)，以及[官网](https://cn.vitejs.dev/)。  
+vite 相对来说需要手动配置的内容很少，如果有需求参考前面的[常见配置](/packages/vite/_sort.2_常见配置.html)，以及[官网](https://cn.vitejs.dev/)。
 
 ### 简单例子
 
-例如配置打包后js支持的版本,在vite.config.ts中添加如下配置：
-vite默认可以支持到es2015，如果需要支持到更低版本，需要添加额外配置。
+例如配置打包后 js 支持的版本,在 vite.config.ts 中添加如下配置：
+vite 默认可以支持到 es2015，如果需要支持到更低版本，需要添加额外配置。
 
 ```bash
   build: {
-    target: "es2015", 
+    target: "es2015",
   },
+```
+
+## 开发代码规范配置：vscode 配置
+
+### 统一工作区工作区设置
+
+下载安装`EditorConfig for VS Code`插件，用于统一工作区工作区设置，例如编码格式、缩进等等。
+添加`.editorconfig`文件到项目根目录，并添加如下内容：
+
+```ini
+[workspace]
+charset = utf-8
+indent_style = space
+indent_size = 2
+end_of_line = lf
+```
+
+### .vscode/extensions.json 插件相关
+
+打开项目时编辑器会检查是否有安装这里面配置的插件，没有会提示现下载,根据自己实际使用情况配置。
+
+```JSON
+{
+    "recommendations": [
+        "Vue.volar",
+        "dbaeumer.vscode-eslint",
+        "esbenp.prettier-vscode",
+        "editorconfig.editorconfig",
+        "stylelint.vscode-stylelint"
+    ]
+}
+
 ```
