@@ -198,6 +198,7 @@ Prettier 是一款功能强大的代码格式化程序。
 
 ```json
 {
+  "printWidth": 180,
   "singleQuote": false,
   "semi": false,
   "bracketSpacing": true,
@@ -317,7 +318,7 @@ export default {
         ignorePseudoClasses: ["global", "v-deep", "deep"], // 忽略属性，修改UI库默认样式的时候能使用到
       },
     ],
-    "scss/operator-no-newline-after": true,
+    "scss/operator-no-newline-after": null,
   },
 };
 ```
