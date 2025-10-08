@@ -138,7 +138,35 @@ export default () => {
 ```
 
 **在 src/main.ts 内引入注册脚本**  
-`import 'virtual:svg-icons-register'`
+`import 'virtual:svg-icons-register'`  
+在 types 文件夹下创建`vite-plugin-svg-icons.d.ts`文件用来声明类型,然后添加到`tsconfig.app.json`下的`include`属性中。
+
+```ts
+// Type declarations for vite-plugin-svg-icons virtual modules
+declare module "virtual:svg-icons-register" {
+  const content: string;
+  export default content;
+}
+```
+
+```JSON
+{
+    "extends": "@vue/tsconfig/tsconfig.dom.json",
+    "compilerOptions": {
+        "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.app.tsbuildinfo",
+        "types": ["vite/client", "./types/autoImport/auto-imports.d.ts", "./types/components/components.d.ts", "element-plus/global"],
+
+        /* Linting */
+        "strict": true,
+        "noUnusedLocals": true,
+        "noUnusedParameters": true,
+        "erasableSyntaxOnly": true,
+        "noFallthroughCasesInSwitch": true,
+        "noUncheckedSideEffectImports": true
+    },
+    "include": ["src/**/*.ts", "src/**/*.tsx", "src/**/*.vue", "src/types/**/*.d.ts", "types/vite-plugin-svg-icons.d.ts"]
+}
+```
 
 **完整组件代码**
 
