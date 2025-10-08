@@ -34,7 +34,7 @@ export default defineConfig({
 
 ## 使用
 
-默认我们可以将预设的样式类直接写在`class`中，也可以通过插件，将这些写在`style`中,以元素属性的实行设置。
+默认我们可以将预设的样式类直接写在`class`中，也可以通过插件，将这些写在`style`中或者以元素属性的进行设置。
 
 安装插件：`pnpm add @unocss/transformer-directives @unocss/preset-attributify @unocss/preset-wind3 -D`
 
