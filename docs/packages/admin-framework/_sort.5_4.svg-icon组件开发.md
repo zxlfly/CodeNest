@@ -36,8 +36,8 @@ export default defineConfig({
 
 ## 自动加载
 
-**安装** `pnpm add @iconify/vue -D`
-这个库已经给我们封装好了 icon 组件，我们在这个组件的基础上封装一个 svg-icon 组件。需要注意，如果你在离线环境下开发，需要你手动下载对应的 icon。  
+**安装** `pnpm add @iconify/vue -D`  
+这个库已经给我们封装好了 `icon` 组件，我们在这个组件的基础上封装一个 svg-icon 组件。需要注意，如果你在离线环境下开发，需要你手动下载对应的 icon。  
 这个方案和`unocss` 的方案没有关联，可以两者都保留不冲突。
 
 ```vue
@@ -52,7 +52,6 @@ export default defineConfig({
 
 <script setup lang="ts">
 import { Icon } from "@iconify/vue";
-import { computed } from "vue";
 
 const props = withDefaults(
   defineProps<{
@@ -83,8 +82,6 @@ const props = withDefaults(
 // 合并类名：处理尺寸、禁用状态
 const mergeClass = computed(() =>
   [
-    // 尺寸类（若为数字，转成固定尺寸；若为字符串，直接使用）
-    typeof props.size === "number" ? `w-${props.size} h-${props.size}` : "",
     // 禁用状态类
     props.disabled ? "opacity-50 cursor-not-allowed" : "",
     // 额外自定义类

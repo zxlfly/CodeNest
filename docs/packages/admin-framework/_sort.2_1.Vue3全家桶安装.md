@@ -24,14 +24,12 @@ pnpm add vue-router@4
 ## 状态管理
 
 在通过 vite 搭建项目的时候，是可以选择安装[Pinia](https://pinia.vuejs.org/zh/getting-started.html)的，这里演示的是单独手动安装。
-在后面的[配置路由]章节会详细介绍怎么使用。
 
 ```bash
 pnpm add pinia
 ```
 
 安装完成后再`src`目录下新建`stores`文件夹，后续状态文件都会放在这里。
-在后面的[页面布局](/packages/admin-framework/_sort.3_2.页面布局)章节会详细介绍怎么使用。
 
 ## UI 框架
 
