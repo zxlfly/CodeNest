@@ -2,10 +2,10 @@
 
 上一节介绍了基础的布局控件，如果只是单一的使用那些控件，界面往往比较单一，在定制化需求下并不符合需求。实际的开发过程中，我们往往需要多层布局嵌套。
 
-1. <font style="color:rgb(51, 51, 51);">创建多个布局，例如：水平布局（QHBoxLayout）和垂直布局（QVBoxLayout）</font>
-2. <font style="color:rgb(51, 51, 51);">把控件放入各自的布局</font>
-3. <font style="color:rgb(51, 51, 51);">把一个布局</font><font style="color:rgb(51, 51, 51);"> </font>**<font style="color:rgb(51, 51, 51);">嵌套到另一个布局</font>**<font style="color:rgb(51, 51, 51);"> </font><font style="color:rgb(51, 51, 51);">中</font>
-4. <font style="color:rgb(51, 51, 51);">设置最外层布局为窗口的布局</font>
+1. 创建多个布局，例如：水平布局（QHBoxLayout）和垂直布局（QVBoxLayout）
+2. 把控件放入各自的布局
+3. 把一个布局 **嵌套到另一个布局** 中
+4. 设置最外层布局为窗口的布局
 
 ```python
 import sys
@@ -43,13 +43,13 @@ sys.exit(app.exec())
 ```
 
 ## 综合示例
-1. **<font style="color:rgb(51, 51, 51);">左菜单</font>**<font style="color:rgb(51, 51, 51);">：垂直布局 + 弹簧，让菜单靠上</font>
-2. **<font style="color:rgb(51, 51, 51);">右页面</font>**<font style="color:rgb(51, 51, 51);">：堆栈布局，切换不同内容</font>
-3. **<font style="color:rgb(51, 51, 51);">页面 1</font>**<font style="color:rgb(51, 51, 51);">：网格布局，控件跨列演示</font>
-4. **<font style="color:rgb(51, 51, 51);">页面 2</font>**<font style="color:rgb(51, 51, 51);">：表单布局，左标签右输入框</font>
-5. **<font style="color:rgb(51, 51, 51);">页面 3</font>**<font style="color:rgb(51, 51, 51);">：垂直布局 + 水平布局嵌套，底部按钮靠左</font>
-6. **<font style="color:rgb(51, 51, 51);">伸缩因子</font>**<font style="color:rgb(51, 51, 51);">：左菜单=1，右页面=4，拉伸窗口时右边占更多空间</font>
-7. **<font style="color:rgb(51, 51, 51);">间距 & 边距</font>**<font style="color:rgb(51, 51, 51);">：</font>`<font style="color:rgb(51, 51, 51);">setSpacing()</font>`<font style="color:rgb(51, 51, 51);"> + </font>`<font style="color:rgb(51, 51, 51);">setContentsMargins()</font>`
+1. **左菜单**：垂直布局 + 弹簧，让菜单靠上
+2. **右页面**：堆栈布局，切换不同内容
+3. **页面 1**：网格布局，控件跨列演示
+4. **页面 2**：表单布局，左标签右输入框
+5. **页面 3**：垂直布局 + 水平布局嵌套，底部按钮靠左
+6. **伸缩因子**：左菜单=1，右页面=4，拉伸窗口时右边占更多空间
+7. **间距 & 边距**：`setSpacing()` + `setContentsMargins()`
 
 ```python
 import sys

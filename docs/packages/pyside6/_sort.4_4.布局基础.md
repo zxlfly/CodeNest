@@ -1,11 +1,11 @@
 # 4. 布局基础
 PySide6 提供的几种常用布局方式，比如垂直布局、水平布局、网格布局等。让界面可以随着窗口大小自动适应。
 
-## <font style="color:rgb(51, 51, 51);">QVBoxLayout（垂直布局）</font>
+## QVBoxLayout（垂直布局）
 控件从上往下一个个排列。
 
 + 创建一个 `QVBoxLayout` 对象
-+ <font style="color:rgb(51, 51, 51);">把页面中对应的控件一个个 </font>`<font style="color:rgb(51, 51, 51);">addWidget()</font>`<font style="color:rgb(51, 51, 51);"> 进去</font>
++ 把页面中对应的控件一个个 `addWidget()` 进去
 + 把这个布局设置到窗口上：`setLayout(layout)`
 
 ```python
@@ -46,7 +46,7 @@ sys.exit(app.exec())
 + `addStretch()`：在控件之间加“弹簧”，用来撑开空间。 （比如按钮想靠上，下面空一大片，就加个 `addStretch()`）。
 + `setSpacing(value)`：设置控件之间的间距（默认是 6 像素）。
 
-## <font style="color:rgb(51, 51, 51);">QHBoxLayout（水平布局）</font>
+## QHBoxLayout（水平布局）
 控件从左到右一个个排列。
 
 + 创建一个 `QHBoxLayout` 对象。
@@ -82,7 +82,7 @@ window.show()
 sys.exit(app.exec())
 ```
 
-## <font style="color:rgb(51, 51, 51);">QGridLayout（网格布局）</font>
+## QGridLayout（网格布局）
 类似一个表格一样，控件根据需求放在对应的表格里面。
 
 + 每个控件都放在某一行、某一列里；
@@ -129,11 +129,11 @@ sys.exit(app.exec())
 
 addWidget：
 
-+ `**<font style="color:rgb(51, 51, 51);">btn1</font>**`<font style="color:rgb(51, 51, 51);">：控件</font>
-+ `**<font style="color:rgb(51, 51, 51);">0, 0</font>**`<font style="color:rgb(51, 51, 51);">：控件的起始位置，</font>`<font style="color:rgb(51, 51, 51);">(row=0, column=0)</font>`<font style="color:rgb(51, 51, 51);">表示放在第 0 行第 0 列。</font>
-+ `**<font style="color:rgb(51, 51, 51);">1, 2</font>**`<font style="color:rgb(51, 51, 51);">：控件的跨度，</font>`<font style="color:rgb(51, 51, 51);">(rowSpan=1, columnSpan=2)</font>`<font style="color:rgb(51, 51, 51);">表示：</font>
-    - **<font style="color:rgb(51, 51, 51);">跨 1 行</font>**<font style="color:rgb(51, 51, 51);">（高度占 1 行）</font>
-    - **<font style="color:rgb(51, 51, 51);">跨 2 列</font>**<font style="color:rgb(51, 51, 51);">（宽度占 2 列）</font>
++ `**btn1**`：控件
++ `**0, 0**`：控件的起始位置，`(row=0, column=0)`表示放在第 0 行第 0 列。
++ `**1, 2**`：控件的跨度，`(rowSpan=1, columnSpan=2)`表示：
+    - **跨 1 行**（高度占 1 行）
+    - **跨 2 列**（宽度占 2 列）
 
 ```python
 import sys
@@ -170,8 +170,8 @@ sys.exit(app.exec())
 
 默认情况下每一行每一列的宽高是均分的，如果想调整行、列的宽高可以使用下面的方法：
 
-+ `<font style="color:rgb(51, 51, 51);">setColumnStretch(列号, 权重)</font>`
-+ `<font style="color:rgb(51, 51, 51);">setRowStretch(行号, 权重)</font>`
++ `setColumnStretch(列号, 权重)`
++ `setRowStretch(行号, 权重)`
 
 ```python
 import sys
@@ -210,12 +210,12 @@ window.show()
 sys.exit(app.exec())
 ```
 
-## <font style="color:rgb(51, 51, 51);">QFormLayout（表单布局）</font>
+## QFormLayout（表单布局）
 通用常见的两列布局为主的表单控件，虽然说是两列，但不是强制性的，例如addRow的时候只放一个控件，就成了一列。
 
-1. <font style="color:rgb(51, 51, 51);">创建一个</font><font style="color:rgb(51, 51, 51);"> </font>`<font style="color:rgb(51, 51, 51);">QFormLayout</font>`<font style="color:rgb(51, 51, 51);"> </font><font style="color:rgb(51, 51, 51);">对象。</font>
-2. <font style="color:rgb(51, 51, 51);">用</font><font style="color:rgb(51, 51, 51);"> </font>`<font style="color:rgb(51, 51, 51);">addRow(标签, 控件)</font>`<font style="color:rgb(51, 51, 51);"> </font><font style="color:rgb(51, 51, 51);">来添加一行。</font>
-3. <font style="color:rgb(51, 51, 51);">把布局设置到窗口：</font>`<font style="color:rgb(51, 51, 51);">setLayout(layout)</font>`<font style="color:rgb(51, 51, 51);">。</font>
+1. 创建一个 `QFormLayout` 对象。
+2. 用 `addRow(标签, 控件)` 来添加一行。
+3. 把布局设置到窗口：`setLayout(layout)`。
 
 ```python
 import sys
@@ -253,17 +253,17 @@ sys.exit(app.exec())
 
 **常用方法：**
 
-+ `<font style="color:rgb(51, 51, 51);">addRow(QLabel, QWidget)</font>`<font style="color:rgb(51, 51, 51);">：添加一行，左边是说明文字，右边是输入控件。</font>
-+ `<font style="color:rgb(51, 51, 51);">addRow(QWidget)</font>`<font style="color:rgb(51, 51, 51);">：只添加一个控件（比如按钮），它会自动横跨两列。</font>
-+ `<font style="color:rgb(51, 51, 51);">setLabelAlignment(Qt.Alignment)</font>`<font style="color:rgb(51, 51, 51);">：设置左边标签的对齐方式（比如左对齐、右对齐）。</font>
-+ `<font style="color:rgb(51, 51, 51);">setFormAlignment(Qt.Alignment)</font>`<font style="color:rgb(51, 51, 51);">：控制整体表单的对齐方式（居中、靠上等）。</font>
++ `addRow(QLabel, QWidget)`：添加一行，左边是说明文字，右边是输入控件。
++ `addRow(QWidget)`：只添加一个控件（比如按钮），它会自动横跨两列。
++ `setLabelAlignment(Qt.Alignment)`：设置左边标签的对齐方式（比如左对齐、右对齐）。
++ `setFormAlignment(Qt.Alignment)`：控制整体表单的对齐方式（居中、靠上等）。
 
-## <font style="color:rgb(51, 51, 51);">QStackedLayout（堆栈布局）</font>
+## QStackedLayout（堆栈布局）
 常见的那种同一时刻只能显示一个页面的的布局方式，就是堆栈布局。一般通过按钮、菜单或信号切换显示的页面。
 
-+ <font style="color:rgb(51, 51, 51);">创建一个 </font>`<font style="color:rgb(51, 51, 51);">QStackedLayout</font>`<font style="color:rgb(51, 51, 51);"> 对象</font>
-+ <font style="color:rgb(51, 51, 51);">用</font><font style="color:rgb(51, 51, 51);"> </font>`<font style="color:rgb(51, 51, 51);">addWidget(widget)</font>`<font style="color:rgb(51, 51, 51);"> </font><font style="color:rgb(51, 51, 51);">添加多个页面</font>
-+ <font style="color:rgb(51, 51, 51);">用 </font>`<font style="color:rgb(51, 51, 51);">setCurrentIndex(index)</font>`<font style="color:rgb(51, 51, 51);"> 或 </font>`<font style="color:rgb(51, 51, 51);">setCurrentWidget(widget)</font>`<font style="color:rgb(51, 51, 51);"> 切换显示</font>
++ 创建一个 `QStackedLayout` 对象
++ 用 `addWidget(widget)` 添加多个页面
++ 用 `setCurrentIndex(index)` 或 `setCurrentWidget(widget)` 切换显示
 
 ```python
 import sys
@@ -311,19 +311,19 @@ window.show()
 sys.exit(app.exec())
 ```
 
-## <font style="color:rgb(51, 51, 51);">控件伸缩因子与间距控制</font>
+## 控件伸缩因子与间距控制
 前面布局中，默认控件都能自动排好位置。但是实际开发过程中，我们会有定制化的需求，不可能都是这样规规矩矩的。所以这时候就需要**伸缩因子（Stretch Factor）** 和 **间距控制（Spacing / Margin）**。
 
-1. **<font style="color:rgb(51, 51, 51);">伸缩因子（Stretch Factor）</font>**<font style="color:rgb(51, 51, 51);">：决定控件占用剩余空间的比例</font>
-2. **<font style="color:rgb(51, 51, 51);">控件间距（Spacing）</font>**<font style="color:rgb(51, 51, 51);">：控制控件之间的距离</font>
-3. **<font style="color:rgb(51, 51, 51);">布局边距（Margin）</font>**<font style="color:rgb(51, 51, 51);">：控制布局与窗口边缘的距离</font>
-4. **<font style="color:rgb(51, 51, 51);">弹簧控件（Stretch / Spacer）</font>**<font style="color:rgb(51, 51, 51);">：快速把控件推到某一边</font>
+1. **伸缩因子（Stretch Factor）**：决定控件占用剩余空间的比例
+2. **控件间距（Spacing）**：控制控件之间的距离
+3. **布局边距（Margin）**：控制布局与窗口边缘的距离
+4. **弹簧控件（Stretch / Spacer）**：快速把控件推到某一边
 
-### <font style="color:rgb(51, 51, 51);">弹簧控件（Stretch / Spacer）</font>
+### 弹簧控件（Stretch / Spacer）
 前面其实已经用到过弹簧了。它可以把控件推到一边
 
-+ `<font style="color:rgb(51, 51, 51);">addStretch()</font>`<font style="color:rgb(51, 51, 51);">：在布局中添加一个弹簧</font>
-+ <font style="color:rgb(51, 51, 51);">弹簧会占用剩余空间，把控件挤到另一边</font>
++ `addStretch()`：在布局中添加一个弹簧
++ 弹簧会占用剩余空间，把控件挤到另一边
 
 ```python
 import sys
@@ -364,16 +364,16 @@ window.show()
 sys.exit(app.exec())
 ```
 
-<font style="color:rgb(51, 51, 51);">hbox.addStretch(1)、hbox.addStretch(2) 将空闲部分划分为3块，然后比例是1：2</font>
+hbox.addStretch(1)、hbox.addStretch(2) 将空闲部分划分为3块，然后比例是1：2
 
-### <font style="color:rgb(51, 51, 51);">控件伸缩因子（Stretch Factor）</font>
+### 控件伸缩因子（Stretch Factor）
 伸缩因子决定了 控件在布局中分配剩余空间的比例。
 
-+ <font style="color:rgb(51, 51, 51);">水平布局里：影响控件的宽度</font>
-+ <font style="color:rgb(51, 51, 51);">垂直布局里：影响控件的高度</font>
-+ <font style="color:rgb(51, 51, 51);">网格布局里：可以用 </font>`<font style="color:rgb(51, 51, 51);">setRowStretch()</font>`<font style="color:rgb(51, 51, 51);"> 和 </font>`<font style="color:rgb(51, 51, 51);">setColumnStretch()</font>`<font style="color:rgb(51, 51, 51);"> 调整行列比例</font>
++ 水平布局里：影响控件的宽度
++ 垂直布局里：影响控件的高度
++ 网格布局里：可以用 `setRowStretch()` 和 `setColumnStretch()` 调整行列比例
 
-#### <font style="color:rgb(51, 51, 51);">示例：水平布局中伸缩因子</font>
+#### 示例：水平布局中伸缩因子
 ```python
 from PySide6.QtWidgets import QApplication, QWidget, QPushButton, QHBoxLayout
 import sys
@@ -396,7 +396,7 @@ window.show()
 sys.exit(app.exec())
 ```
 
-#### <font style="color:rgb(51, 51, 51);">示例：垂直布局中伸缩因子</font>
+#### 示例：垂直布局中伸缩因子
 ```python
 from PySide6.QtWidgets import QApplication, QWidget, QPushButton, QVBoxLayout, QSizePolicy
 from PySide6.QtCore import Qt
@@ -431,7 +431,7 @@ window.show()
 sys.exit(app.exec())
 ```
 
-#### 示例：<font style="color:rgb(51, 51, 51);">网格布局中伸缩因子</font>
+#### 示例：网格布局中伸缩因子
 ```python
 from PySide6.QtWidgets import QApplication, QWidget, QPushButton, QGridLayout, QSizePolicy
 from PySide6.QtCore import Qt
@@ -480,9 +480,9 @@ window.show()
 sys.exit(app.exec())
 ```
 
-### <font style="color:rgb(51, 51, 51);">控件间距（Spacing）</font>
+### 控件间距（Spacing）
 + `layout.setSpacing(value)`：设置 控件之间的间距
-+ <font style="color:rgb(51, 51, 51);">默认间距一般是 6 像素，如果觉得太紧或者太松，可以自己调整</font>
++ 默认间距一般是 6 像素，如果觉得太紧或者太松，可以自己调整
 
 ```python
 from PySide6.QtWidgets import QApplication, QWidget, QPushButton, QGridLayout, QSizePolicy
@@ -527,8 +527,8 @@ window.show()
 sys.exit(app.exec())
 ```
 
-### <font style="color:rgb(51, 51, 51);">布局边距（Margin）</font>
-+ `<font style="color:rgb(51, 51, 51);">layout.setContentsMargins(left, top, right, bottom)</font>`<font style="color:rgb(51, 51, 51);">：设置 </font>**<font style="color:rgb(51, 51, 51);">布局与窗口边缘的空白</font>**
+### 布局边距（Margin）
++ `layout.setContentsMargins(left, top, right, bottom)`：设置 **布局与窗口边缘的空白**
 
 ```python
 from PySide6.QtWidgets import QApplication, QWidget, QPushButton, QGridLayout, QSizePolicy
@@ -582,6 +582,6 @@ window.show()
 sys.exit(app.exec())
 ```
 
-## <font style="color:rgb(51, 51, 51);">多层布局嵌套</font>
-**<font style="color:rgb(51, 51, 51);"></font>**
+## 多层布局嵌套
+****
 

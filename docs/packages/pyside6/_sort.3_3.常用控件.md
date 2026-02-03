@@ -8,7 +8,7 @@
 ## QLabel
 用于 显示文字、图片、超链接等内容。
 
-可以<font style="color:rgb(51, 51, 51);">借助 HTML 显示混合内容</font>：文字+图片。
+可以借助 HTML 显示混合内容：文字+图片。
 
 ```python
 from PySide6.QtWidgets import QApplication, QLabel
@@ -20,14 +20,14 @@ label.show()
 app.exec()
 ```
 
-| `<font style="color:rgb(51, 51, 51);">setScaledContents()</font>`**<font style="color:rgb(51, 51, 51);">方法</font>** | **<font style="color:rgb(51, 51, 51);">说明</font>** |
+| `setScaledContents()`**方法** | **说明** |
 | :--- | --- |
-| `<font style="color:rgb(51, 51, 51);">setText(str)</font>` | <font style="color:rgb(51, 51, 51);">设置显示文本</font> |
-| `<font style="color:rgb(51, 51, 51);">setPixmap(QPixmap)</font>` | <font style="color:rgb(51, 51, 51);">设置显示图片</font> |
-| `<font style="color:rgb(51, 51, 51);">setAlignment()</font>` | <font style="color:rgb(51, 51, 51);">设置文字对齐方式</font> |
-| `<font style="color:rgb(51, 51, 51);">setStyleSheet()</font>` | <font style="color:rgb(51, 51, 51);">设置样式（字体、颜色等）</font> |
-| `<font style="color:rgb(51, 51, 51);">setScaledContents()</font>` | <font style="color:rgb(51, 51, 51);">设置图片是否自适应标签尺寸</font> |
-| `<font style="color:rgb(51, 51, 51);">setOpenExternalLinks(bool)</font>` | 如果渲染那的html内容有a链接，期望能点击的打开的话需要设置这个属性 |
+| `setText(str)` | 设置显示文本 |
+| `setPixmap(QPixmap)` | 设置显示图片 |
+| `setAlignment()` | 设置文字对齐方式 |
+| `setStyleSheet()` | 设置样式（字体、颜色等） |
+| `setScaledContents()` | 设置图片是否自适应标签尺寸 |
+| `setOpenExternalLinks(bool)` | 如果渲染那的html内容有a链接，期望能点击的打开的话需要设置这个属性 |
 
 
 ## QPushButton
@@ -46,14 +46,14 @@ btn.show()
 app.exec()
 ```
 
-| `<font style="color:rgb(51, 51, 51);">setText(str)</font>` | <font style="color:rgb(51, 51, 51);">设置按钮文字</font> |
+| `setText(str)` | 设置按钮文字 |
 | :--- | :--- |
-| `<font style="color:rgb(51, 51, 51);">setIcon(QIcon)</font>` | <font style="color:rgb(51, 51, 51);">给按钮添加图标</font> |
-| `<font style="color:rgb(51, 51, 51);">setEnabled(bool)</font>` | <font style="color:rgb(51, 51, 51);">设置按钮是否可用</font> |
-| `<font style="color:rgb(51, 51, 51);">setCheckable(bool)</font>` | <font style="color:rgb(51, 51, 51);">是否为可切换按钮</font> |
-| `<font style="color:rgb(51, 51, 51);">isChecked()</font>` | <font style="color:rgb(51, 51, 51);">返回按钮当前是否被按下</font> |
-| `<font style="color:rgb(51, 51, 51);">clicked</font>`<br/><font style="color:rgb(51, 51, 51);"> </font><font style="color:rgb(51, 51, 51);">信号</font> | <font style="color:rgb(51, 51, 51);">按钮被点击时触发</font> |
-| `<font style="color:rgb(51, 51, 51);">toggled</font>`<br/><font style="color:rgb(51, 51, 51);"> </font><font style="color:rgb(51, 51, 51);">信号</font> | <font style="color:rgb(51, 51, 51);">按钮状态切换时触发（True/False）</font> |
+| `setIcon(QIcon)` | 给按钮添加图标 |
+| `setEnabled(bool)` | 设置按钮是否可用 |
+| `setCheckable(bool)` | 是否为可切换按钮 |
+| `isChecked()` | 返回按钮当前是否被按下 |
+| `clicked`<br/> 信号 | 按钮被点击时触发 |
+| `toggled`<br/> 信号 | 按钮状态切换时触发（True/False） |
 
 
 ## QLineEdit
@@ -71,26 +71,26 @@ app.exec()
 
 **支持模式**
 
-| **<font style="color:rgb(51, 51, 51);">模式</font>** | **<font style="color:rgb(51, 51, 51);">说明</font>** |
+| **模式** | **说明** |
 | :--- | :--- |
-| `<font style="color:rgb(51, 51, 51);">QLineEdit.Normal</font>` | <font style="color:rgb(51, 51, 51);">默认模式，正常显示文本</font> |
-| `<font style="color:rgb(51, 51, 51);">QLineEdit.Password</font>` | <font style="color:rgb(51, 51, 51);">密码模式，显示为小圆点</font> |
-| `<font style="color:rgb(51, 51, 51);">QLineEdit.NoEcho</font>` | <font style="color:rgb(51, 51, 51);">不显示任何输入</font> |
-| `<font style="color:rgb(51, 51, 51);">QLineEdit.PasswordEchoOnEdit</font>` | <font style="color:rgb(51, 51, 51);">编辑时显示，失焦后变圆点</font> |
+| `QLineEdit.Normal` | 默认模式，正常显示文本 |
+| `QLineEdit.Password` | 密码模式，显示为小圆点 |
+| `QLineEdit.NoEcho` | 不显示任何输入 |
+| `QLineEdit.PasswordEchoOnEdit` | 编辑时显示，失焦后变圆点 |
 
 
 **常用方法**
 
-| **<font style="color:rgb(51, 51, 51);">方法/属性</font>** | **<font style="color:rgb(51, 51, 51);">说明</font>** |
+| **方法/属性** | **说明** |
 | :--- | :--- |
-| `<font style="color:rgb(51, 51, 51);">setText(str)</font>` | <font style="color:rgb(51, 51, 51);">设置默认文本</font> |
-| `<font style="color:rgb(51, 51, 51);">text()</font>` | <font style="color:rgb(51, 51, 51);">获取当前输入的内容</font> |
-| `<font style="color:rgb(51, 51, 51);">clear()</font>` | <font style="color:rgb(51, 51, 51);">清空输入框</font> |
-| `<font style="color:rgb(51, 51, 51);">setPlaceholderText(str)</font>` | <font style="color:rgb(51, 51, 51);">设置占位符</font> |
-| `<font style="color:rgb(51, 51, 51);">setEchoMode(mode)</font>` | <font style="color:rgb(51, 51, 51);">设置显示模式（普通/密码等）</font> |
-| `<font style="color:rgb(51, 51, 51);">setValidator(obj)</font>` | <font style="color:rgb(51, 51, 51);">设置输入验证规则</font> |
-| `<font style="color:rgb(51, 51, 51);">textChanged</font>`<br/><font style="color:rgb(51, 51, 51);"> </font><font style="color:rgb(51, 51, 51);">信号</font> | <font style="color:rgb(51, 51, 51);">文本内容改变时触发</font> |
-| `<font style="color:rgb(51, 51, 51);">returnPressed</font>`<br/><font style="color:rgb(51, 51, 51);"> </font><font style="color:rgb(51, 51, 51);">信号</font> | <font style="color:rgb(51, 51, 51);">按回车键时触发</font> |
+| `setText(str)` | 设置默认文本 |
+| `text()` | 获取当前输入的内容 |
+| `clear()` | 清空输入框 |
+| `setPlaceholderText(str)` | 设置占位符 |
+| `setEchoMode(mode)` | 设置显示模式（普通/密码等） |
+| `setValidator(obj)` | 设置输入验证规则 |
+| `textChanged`<br/> 信号 | 文本内容改变时触发 |
+| `returnPressed`<br/> 信号 | 按回车键时触发 |
 
 
 ## ---QTextEdit
@@ -120,26 +120,26 @@ win.show()
 app.exec()
 ```
 
-<font style="color:rgb(51, 51, 51);">三态状态码：</font>
+三态状态码：
 
-+ `<font style="color:rgb(51, 51, 51);">0</font>`<font style="color:rgb(51, 51, 51);"> </font><font style="color:rgb(51, 51, 51);">→ 未选中 (Unchecked)</font>
-+ `<font style="color:rgb(51, 51, 51);">1</font>`<font style="color:rgb(51, 51, 51);"> </font><font style="color:rgb(51, 51, 51);">→ 部分选中 (PartiallyChecked)</font>
-+ `<font style="color:rgb(51, 51, 51);">2</font>`<font style="color:rgb(51, 51, 51);"> → 选中 (Checked)</font>
++ `0` → 未选中 (Unchecked)
++ `1` → 部分选中 (PartiallyChecked)
++ `2` → 选中 (Checked)
 
-| **<font style="color:rgb(51, 51, 51);">方法/属性</font>** | **<font style="color:rgb(51, 51, 51);">说明</font>** |
+| **方法/属性** | **说明** |
 | :--- | :--- |
-| `<font style="color:rgb(51, 51, 51);">setChecked(True)</font>` | <font style="color:rgb(51, 51, 51);">设置复选框为选中状态</font> |
-| `<font style="color:rgb(51, 51, 51);">isChecked()</font>` | <font style="color:rgb(51, 51, 51);">返回当前是否选中（True/False）</font> |
-| `<font style="color:rgb(51, 51, 51);">setTristate(True)</font>` | <font style="color:rgb(51, 51, 51);">设置三态模式</font> |
-| `<font style="color:rgb(51, 51, 51);">stateChanged</font>`<br/><font style="color:rgb(51, 51, 51);"> </font><font style="color:rgb(51, 51, 51);">信号</font> | <font style="color:rgb(51, 51, 51);">状态变化时触发（0/1/2）</font> |
-| `<font style="color:rgb(51, 51, 51);">toggled(bool)</font>`<br/><font style="color:rgb(51, 51, 51);"> </font><font style="color:rgb(51, 51, 51);">信号</font> | <font style="color:rgb(51, 51, 51);">状态切换时触发（True/False）</font> |
+| `setChecked(True)` | 设置复选框为选中状态 |
+| `isChecked()` | 返回当前是否选中（True/False） |
+| `setTristate(True)` | 设置三态模式 |
+| `stateChanged`<br/> 信号 | 状态变化时触发（0/1/2） |
+| `toggled(bool)`<br/> 信号 | 状态切换时触发（True/False） |
 
 
 ## QRadioButton
 单选按钮，用于在一组中选择一个选项。
 
-+ `<font style="color:rgb(51, 51, 51);">toggled(bool)</font>`<font style="color:rgb(51, 51, 51);"> </font><font style="color:rgb(51, 51, 51);">信号在选中/取消时都会触发。</font>
-+ <font style="color:rgb(51, 51, 51);">常用读取：</font>`<font style="color:rgb(51, 51, 51);">rb.isChecked()</font>`<font style="color:rgb(51, 51, 51);">。</font>
++ `toggled(bool)` 信号在选中/取消时都会触发。
++ 常用读取：`rb.isChecked()`。
 + 同一父容器内的多个 `QRadioButton` 默认就是互斥的：选了一个，其他会自动取消。
 
 ```python
@@ -163,14 +163,14 @@ win.show()
 app.exec()
 ```
 
-| **<font style="color:rgb(51, 51, 51);">类/方法</font>** | **<font style="color:rgb(51, 51, 51);">作用</font>** |
+| **类/方法** | **作用** |
 | :--- | :--- |
-| `<font style="color:rgb(51, 51, 51);">QRadioButton.setChecked</font>` | <font style="color:rgb(51, 51, 51);">设为选中/不选中</font> |
-| `<font style="color:rgb(51, 51, 51);">QRadioButton.isChecked()</font>` | <font style="color:rgb(51, 51, 51);">判断是否选中</font> |
-| `<font style="color:rgb(51, 51, 51);">QRadioButton.toggled</font>` | <font style="color:rgb(51, 51, 51);">选中状态变化信号（bool）</font> |
-| `<font style="color:rgb(51, 51, 51);">QButtonGroup.addButton</font>` | <font style="color:rgb(51, 51, 51);">把按钮加入组并设置 id</font> |
-| `<font style="color:rgb(51, 51, 51);">QButtonGroup.checkedId()</font>` | <font style="color:rgb(51, 51, 51);">获取当前选中的 id</font> |
-| `<font style="color:rgb(51, 51, 51);">QButtonGroup.checkedButton()</font>` | <font style="color:rgb(51, 51, 51);">获取当前选中的按钮对象</font> |
+| `QRadioButton.setChecked` | 设为选中/不选中 |
+| `QRadioButton.isChecked()` | 判断是否选中 |
+| `QRadioButton.toggled` | 选中状态变化信号（bool） |
+| `QButtonGroup.addButton` | 把按钮加入组并设置 id |
+| `QButtonGroup.checkedId()` | 获取当前选中的 id |
+| `QButtonGroup.checkedButton()` | 获取当前选中的按钮对象 |
 
 
 ## QComboBox
@@ -199,20 +199,20 @@ win.show()
 app.exec()
 ```
 
-| **<font style="color:rgb(51, 51, 51);">方法/属性</font>** | **<font style="color:rgb(51, 51, 51);">说明</font>** |
+| **方法/属性** | **说明** |
 | :--- | :--- |
-| `<font style="color:rgb(51, 51, 51);">addItem(str)</font>` | <font style="color:rgb(51, 51, 51);">添加单个选项</font> |
-| `<font style="color:rgb(51, 51, 51);">addItems(list)</font>` | <font style="color:rgb(51, 51, 51);">添加多个选项</font> |
-| `<font style="color:rgb(51, 51, 51);">currentIndex()</font>` | <font style="color:rgb(51, 51, 51);">获取当前选项索引（0 开始）</font> |
-| `<font style="color:rgb(51, 51, 51);">currentText()</font>` | <font style="color:rgb(51, 51, 51);">获取当前选项文本</font> |
-| `<font style="color:rgb(51, 51, 51);">setCurrentIndex(i)</font>` | <font style="color:rgb(51, 51, 51);">设置默认选中项</font> |
-| `<font style="color:rgb(51, 51, 51);">setEditable(True)</font>` | <font style="color:rgb(51, 51, 51);">设置可编辑模式</font> |
-| `<font style="color:rgb(51, 51, 51);">clear()</font>` | <font style="color:rgb(51, 51, 51);">清空所有选项</font> |
-| `<font style="color:rgb(51, 51, 51);">currentTextChanged</font>`<br/><font style="color:rgb(51, 51, 51);"> </font><font style="color:rgb(51, 51, 51);">信号</font> | <font style="color:rgb(51, 51, 51);">当当前选项内容改变时触发</font> |
+| `addItem(str)` | 添加单个选项 |
+| `addItems(list)` | 添加多个选项 |
+| `currentIndex()` | 获取当前选项索引（0 开始） |
+| `currentText()` | 获取当前选项文本 |
+| `setCurrentIndex(i)` | 设置默认选中项 |
+| `setEditable(True)` | 设置可编辑模式 |
+| `clear()` | 清空所有选项 |
+| `currentTextChanged`<br/> 信号 | 当当前选项内容改变时触发 |
 
 
 ## QListWidget
-<font style="color:rgb(51, 51, 51);">用来展示一列文本项（也可带图标）。 常见需求：添加列表项、响应选中变化、支持多选、读取当前或全部选中项等。</font>
+用来展示一列文本项（也可带图标）。 常见需求：添加列表项、响应选中变化、支持多选、读取当前或全部选中项等。
 
 ```python
 from PySide6.QtWidgets import QApplication, QWidget, QListWidget, QLabel
@@ -240,30 +240,30 @@ win.show()
 app.exec()
 ```
 
-| **<font style="color:rgb(51, 51, 51);">方法/属性/信号</font>** | **<font style="color:rgb(51, 51, 51);">说明</font>** |
+| **方法/属性/信号** | **说明** |
 | :--- | :--- |
-| `<font style="color:rgb(51, 51, 51);">addItem(str)</font>`<br/><font style="color:rgb(51, 51, 51);"> </font><font style="color:rgb(51, 51, 51);">/</font><font style="color:rgb(51, 51, 51);"> </font>`<font style="color:rgb(51, 51, 51);">addItems(list)</font>` | <font style="color:rgb(51, 51, 51);">添加一项 / 多项</font> |
-| `<font style="color:rgb(51, 51, 51);">insertItem(row, str)</font>` | <font style="color:rgb(51, 51, 51);">在指定行插入</font> |
-| `<font style="color:rgb(51, 51, 51);">takeItem(row)</font>` | <font style="color:rgb(51, 51, 51);">移除并返回该行项</font> |
-| `<font style="color:rgb(51, 51, 51);">clear()</font>` | <font style="color:rgb(51, 51, 51);">清空所有项</font> |
-| `<font style="color:rgb(51, 51, 51);">count()</font>` | <font style="color:rgb(51, 51, 51);">列表项数量</font> |
-| `<font style="color:rgb(51, 51, 51);">currentItem()</font>`<br/><font style="color:rgb(51, 51, 51);"> </font><font style="color:rgb(51, 51, 51);">/</font><font style="color:rgb(51, 51, 51);"> </font>`<font style="color:rgb(51, 51, 51);">currentRow()</font>` | <font style="color:rgb(51, 51, 51);">当前选中项 / 行索引</font> |
-| `<font style="color:rgb(51, 51, 51);">selectedItems()</font>` | <font style="color:rgb(51, 51, 51);">返回所有被选中的项（多选）</font> |
-| `<font style="color:rgb(51, 51, 51);">setSelectionMode(mode)</font>` | <font style="color:rgb(51, 51, 51);">选择模式（单选/多选…）</font> |
-| `<font style="color:rgb(51, 51, 51);">item(i)</font>` | <font style="color:rgb(51, 51, 51);">获取第 i 行的项</font> |
-| `<font style="color:rgb(51, 51, 51);">itemSelectionChanged</font>`<br/><font style="color:rgb(51, 51, 51);"> </font><font style="color:rgb(51, 51, 51);">信号</font> | <font style="color:rgb(51, 51, 51);">选中集合变化（多选常用）</font> |
-| `<font style="color:rgb(51, 51, 51);">currentRowChanged(int)</font>`<br/><font style="color:rgb(51, 51, 51);"> </font><font style="color:rgb(51, 51, 51);">信号</font> | <font style="color:rgb(51, 51, 51);">当前行改变（单选常用）</font> |
-| `<font style="color:rgb(51, 51, 51);">itemDoubleClicked(QListWidgetItem)</font>` | <font style="color:rgb(51, 51, 51);">双击项时触发</font> |
+| `addItem(str)`<br/> / `addItems(list)` | 添加一项 / 多项 |
+| `insertItem(row, str)` | 在指定行插入 |
+| `takeItem(row)` | 移除并返回该行项 |
+| `clear()` | 清空所有项 |
+| `count()` | 列表项数量 |
+| `currentItem()`<br/> / `currentRow()` | 当前选中项 / 行索引 |
+| `selectedItems()` | 返回所有被选中的项（多选） |
+| `setSelectionMode(mode)` | 选择模式（单选/多选…） |
+| `item(i)` | 获取第 i 行的项 |
+| `itemSelectionChanged`<br/> 信号 | 选中集合变化（多选常用） |
+| `currentRowChanged(int)`<br/> 信号 | 当前行改变（单选常用） |
+| `itemDoubleClicked(QListWidgetItem)` | 双击项时触发 |
 
 
 ## ---QTreeWidget
 
 
-## <font style="color:rgb(51, 51, 51);">QSpinBox & QDoubleSpinBox</font>
+## QSpinBox & QDoubleSpinBox
 专门用于数值输入的控件
 
-+ `<font style="color:rgb(51, 51, 51);">QSpinBox</font>`<font style="color:rgb(51, 51, 51);"> </font><font style="color:rgb(51, 51, 51);">→ 输入整数</font>
-+ `<font style="color:rgb(51, 51, 51);">QDoubleSpinBox</font>`<font style="color:rgb(51, 51, 51);"> → 输入浮点数（小数）</font>
++ `QSpinBox` → 输入整数
++ `QDoubleSpinBox` → 输入浮点数（小数）
 
 相比 `QLineEdit`，它们更安全，因为只能输入合法范围内的数值，还带上下箭头方便调整。
 
@@ -313,31 +313,31 @@ win.show()
 app.exec()
 ```
 
-| **<font style="color:rgb(51, 51, 51);">方法/属性</font>** | **<font style="color:rgb(51, 51, 51);">说明</font>** |
+| **方法/属性** | **说明** |
 | :--- | :--- |
-| `<font style="color:rgb(51, 51, 51);">setRange(min, max)</font>` | <font style="color:rgb(51, 51, 51);">设置数值范围</font> |
-| `<font style="color:rgb(51, 51, 51);">setMinimum(value)</font>` | <font style="color:rgb(51, 51, 51);">设置最小值</font> |
-| `<font style="color:rgb(51, 51, 51);">setMaximum(value)</font>` | <font style="color:rgb(51, 51, 51);">设置最大值</font> |
-| `<font style="color:rgb(51, 51, 51);">setValue(value)</font>` | <font style="color:rgb(51, 51, 51);">设置默认值</font> |
-| `<font style="color:rgb(51, 51, 51);">value()</font>` | <font style="color:rgb(51, 51, 51);">获取当前数值</font> |
-| `<font style="color:rgb(51, 51, 51);">setSingleStep(step)</font>` | <font style="color:rgb(51, 51, 51);">设置步长（一次加减多少）</font> |
-| `<font style="color:rgb(51, 51, 51);">setDecimals(n)</font>` | <font style="color:rgb(51, 51, 51);">设置小数位数（仅 QDoubleSpinBox）</font> |
-| `<font style="color:rgb(51, 51, 51);">valueChanged</font>`<br/><font style="color:rgb(51, 51, 51);"> </font><font style="color:rgb(51, 51, 51);">信号</font> | <font style="color:rgb(51, 51, 51);">数值变化时触发（传递 int/float）</font> |
+| `setRange(min, max)` | 设置数值范围 |
+| `setMinimum(value)` | 设置最小值 |
+| `setMaximum(value)` | 设置最大值 |
+| `setValue(value)` | 设置默认值 |
+| `value()` | 获取当前数值 |
+| `setSingleStep(step)` | 设置步长（一次加减多少） |
+| `setDecimals(n)` | 设置小数位数（仅 QDoubleSpinBox） |
+| `valueChanged`<br/> 信号 | 数值变化时触发（传递 int/float） |
 
 
-## <font style="color:rgb(51, 51, 51);">QSlider & QDial</font>
+## QSlider & QDial
 `QSlider`（滑块）和 `QDial`（旋钮）都是数值输入控件，都支持 范围、步长、当前值 的设置，并通过 `valueChanged` 信号向外传递数据。
 
-**<font style="color:rgb(51, 51, 51);">QSlider</font>**
+**QSlider**
 
-+ `<font style="color:rgb(51, 51, 51);">QSlider(Qt.Horizontal/Qt.Vertical)</font>`<font style="color:rgb(51, 51, 51);"> </font><font style="color:rgb(51, 51, 51);">控制方向</font>
-+ `<font style="color:rgb(51, 51, 51);">setRange(min, max)</font>`<font style="color:rgb(51, 51, 51);">、</font>`<font style="color:rgb(51, 51, 51);">setValue(v)</font>`<font style="color:rgb(51, 51, 51);">、</font>`<font style="color:rgb(51, 51, 51);">setSingleStep()</font>`<font style="color:rgb(51, 51, 51);">、</font>`<font style="color:rgb(51, 51, 51);">setPageStep()</font>`
-+ `<font style="color:rgb(51, 51, 51);">valueChanged(int)</font>`<font style="color:rgb(51, 51, 51);"> 信号：数值变化时触发</font>
++ `QSlider(Qt.Horizontal/Qt.Vertical)` 控制方向
++ `setRange(min, max)`、`setValue(v)`、`setSingleStep()`、`setPageStep()`
++ `valueChanged(int)` 信号：数值变化时触发
 
-**<font style="color:rgb(51, 51, 51);">QDial</font>**
+**QDial**
 
-+ `<font style="color:rgb(51, 51, 51);">QDial</font>`<font style="color:rgb(51, 51, 51);"> </font><font style="color:rgb(51, 51, 51);">的 API 与</font><font style="color:rgb(51, 51, 51);"> </font>`<font style="color:rgb(51, 51, 51);">QSlider</font>`<font style="color:rgb(51, 51, 51);"> </font><font style="color:rgb(51, 51, 51);">很相似</font>
-+ `<font style="color:rgb(51, 51, 51);">setNotchesVisible(True)</font>`<font style="color:rgb(51, 51, 51);"> 显示刻度</font>
++ `QDial` 的 API 与 `QSlider` 很相似
++ `setNotchesVisible(True)` 显示刻度
 
 ```python
 from PySide6.QtWidgets import QApplication, QWidget, QLabel, QSlider, QDial
@@ -377,17 +377,17 @@ win.show()
 app.exec()
 ```
 
-| **<font style="color:rgb(51, 51, 51);">控件</font>** | **<font style="color:rgb(51, 51, 51);">常用方法/属性</font>** | **<font style="color:rgb(51, 51, 51);">说明</font>** |
+| **控件** | **常用方法/属性** | **说明** |
 | :--- | :--- | :--- |
-| <font style="color:rgb(51, 51, 51);">共同</font> | `<font style="color:rgb(51, 51, 51);">setRange(min, max)</font>` | <font style="color:rgb(51, 51, 51);">设置数值范围</font> |
-| <font style="color:rgb(51, 51, 51);">共同</font> | `<font style="color:rgb(51, 51, 51);">setValue(v) / value()</font>` | <font style="color:rgb(51, 51, 51);">设置/获取当前值</font> |
-| <font style="color:rgb(51, 51, 51);">共同</font> | `<font style="color:rgb(51, 51, 51);">setSingleStep(step)</font>` | <font style="color:rgb(51, 51, 51);">单步增量（键盘方向键/鼠标滚轮）</font> |
-| <font style="color:rgb(51, 51, 51);">共同</font> | `<font style="color:rgb(51, 51, 51);">setPageStep(step)</font>` | <font style="color:rgb(51, 51, 51);">翻页步长（PageUp/PageDown）</font> |
-| <font style="color:rgb(51, 51, 51);">QSlider</font> | `<font style="color:rgb(51, 51, 51);">setOrientation(Qt.Horizontal/Vertical)</font>` | <font style="color:rgb(51, 51, 51);">方向</font> |
-| <font style="color:rgb(51, 51, 51);">QSlider</font> | `<font style="color:rgb(51, 51, 51);">setTickPosition(...)</font>`<br/><font style="color:rgb(51, 51, 51);">、</font>`<font style="color:rgb(51, 51, 51);">setTickInterval(n)</font>` | <font style="color:rgb(51, 51, 51);">刻度位置/间隔</font> |
-| <font style="color:rgb(51, 51, 51);">QDial</font> | `<font style="color:rgb(51, 51, 51);">setNotchesVisible(True)</font>` | <font style="color:rgb(51, 51, 51);">显示刻度</font> |
-| <font style="color:rgb(51, 51, 51);">共同信号</font> | `<font style="color:rgb(51, 51, 51);">valueChanged(int)</font>` | <font style="color:rgb(51, 51, 51);">值变化时触发</font> |
-| <font style="color:rgb(51, 51, 51);">共同信号</font> | `<font style="color:rgb(51, 51, 51);">sliderPressed/sliderReleased</font>`<br/><font style="color:rgb(51, 51, 51);">（仅 QSlider）</font> | <font style="color:rgb(51, 51, 51);">拖动按下/松开（可用于延迟更新）</font> |
+| 共同 | `setRange(min, max)` | 设置数值范围 |
+| 共同 | `setValue(v) / value()` | 设置/获取当前值 |
+| 共同 | `setSingleStep(step)` | 单步增量（键盘方向键/鼠标滚轮） |
+| 共同 | `setPageStep(step)` | 翻页步长（PageUp/PageDown） |
+| QSlider | `setOrientation(Qt.Horizontal/Vertical)` | 方向 |
+| QSlider | `setTickPosition(...)`<br/>、`setTickInterval(n)` | 刻度位置/间隔 |
+| QDial | `setNotchesVisible(True)` | 显示刻度 |
+| 共同信号 | `valueChanged(int)` | 值变化时触发 |
+| 共同信号 | `sliderPressed/sliderReleased`<br/>（仅 QSlider） | 拖动按下/松开（可用于延迟更新） |
 
 
 ## QProgressBar
@@ -409,16 +409,16 @@ win.show()
 app.exec()
 ```
 
-| **<font style="color:rgb(51, 51, 51);">方法/属性</font>** | **<font style="color:rgb(51, 51, 51);">说明</font>** |
+| **方法/属性** | **说明** |
 | :--- | :--- |
-| `<font style="color:rgb(51, 51, 51);">setRange(min, max)</font>` | <font style="color:rgb(51, 51, 51);">设置最小值和最大值</font> |
-| `<font style="color:rgb(51, 51, 51);">setMinimum(value)</font>` | <font style="color:rgb(51, 51, 51);">设置最小值</font> |
-| `<font style="color:rgb(51, 51, 51);">setMaximum(value)</font>` | <font style="color:rgb(51, 51, 51);">设置最大值</font> |
-| `<font style="color:rgb(51, 51, 51);">setValue(value)</font>` | <font style="color:rgb(51, 51, 51);">设置当前值</font> |
-| `<font style="color:rgb(51, 51, 51);">value()</font>` | <font style="color:rgb(51, 51, 51);">获取当前值</font> |
-| `<font style="color:rgb(51, 51, 51);">reset()</font>` | <font style="color:rgb(51, 51, 51);">重置进度条</font> |
-| `<font style="color:rgb(51, 51, 51);">setTextVisible(bool)</font>` | <font style="color:rgb(51, 51, 51);">是否显示百分比文字</font> |
-| `<font style="color:rgb(51, 51, 51);">setFormat(str)</font>` | <font style="color:rgb(51, 51, 51);">设置文字格式，如</font><font style="color:rgb(51, 51, 51);"> </font>`<font style="color:rgb(51, 51, 51);">"完成 %p%"</font>` |
+| `setRange(min, max)` | 设置最小值和最大值 |
+| `setMinimum(value)` | 设置最小值 |
+| `setMaximum(value)` | 设置最大值 |
+| `setValue(value)` | 设置当前值 |
+| `value()` | 获取当前值 |
+| `reset()` | 重置进度条 |
+| `setTextVisible(bool)` | 是否显示百分比文字 |
+| `setFormat(str)` | 设置文字格式，如 `"完成 %p%"` |
 
 
 ## ---QTabWidget

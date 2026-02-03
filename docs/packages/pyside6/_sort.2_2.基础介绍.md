@@ -46,18 +46,18 @@ app.exec()
 
 窗口是否显示出来需要通过方法来控制，常见方法如下：
 
-| **<font style="color:rgb(51, 51, 51);">方法</font>** | **<font style="color:rgb(51, 51, 51);">作用</font>** |
+| **方法** | **作用** |
 | --- | :--- |
-| `<font style="color:rgb(51, 51, 51);">.show()</font>` | <font style="color:rgb(51, 51, 51);">显示窗口</font> |
-| `<font style="color:rgb(51, 51, 51);">.hide()</font>` | <font style="color:rgb(51, 51, 51);">隐藏窗口</font> |
-| `<font style="color:rgb(51, 51, 51);">.close()</font>` | <font style="color:rgb(51, 51, 51);">关闭窗口并退出</font> |
-| `<font style="color:rgb(51, 51, 51);">.isVisible()</font>` | <font style="color:rgb(51, 51, 51);">判断是否可见</font> |
-| `<font style="color:rgb(51, 51, 51);">setWindowTitle("标题")</font>` | <font style="color:rgb(51, 51, 51);">设置窗口标题</font> |
-| `<font style="color:rgb(51, 51, 51);">resize(width, height)</font>` | <font style="color:rgb(51, 51, 51);">设置初始窗口大小</font> |
-| `<font style="color:rgb(51, 51, 51);">setFixedSize(width, height)</font>` | <font style="color:rgb(51, 51, 51);">设置固定窗口大小</font> |
+| `.show()` | 显示窗口 |
+| `.hide()` | 隐藏窗口 |
+| `.close()` | 关闭窗口并退出 |
+| `.isVisible()` | 判断是否可见 |
+| `setWindowTitle("标题")` | 设置窗口标题 |
+| `resize(width, height)` | 设置初始窗口大小 |
+| `setFixedSize(width, height)` | 设置固定窗口大小 |
 
 
-## <font style="color:rgb(51, 51, 51);">事件循环（Event Loop）</font>
+## 事件循环（Event Loop）
 事件循环本质就是一个不停循环，它会不停检查用户是否有操作，有没有要处理的事情。例如用户点击了一个按钮，然后要触发一个事件，这种能力都是依托事件循环实现的。
 
 QT内部有一个事件队列，事件循环就是负责调度处理这个队列里的事件任务。
@@ -68,11 +68,11 @@ QT内部有一个事件队列，事件循环就是负责调度处理这个队列
 ### 基础用法
 这是一种事件响应的方式，发布订阅的模式。
 
-| **<font style="color:rgb(51, 51, 51);">名称</font>** | **<font style="color:rgb(51, 51, 51);">含义</font>** |
+| **名称** | **含义** |
 | :--- | :--- |
-| <font style="color:rgb(51, 51, 51);">信号</font> | <font style="color:rgb(51, 51, 51);">一个事件的通知，比如按钮被点击（clicked）等</font> |
-| <font style="color:rgb(51, 51, 51);">槽函数</font> | <font style="color:rgb(51, 51, 51);">响应这个事件的函数或方法（是否有参数根据实际实现的内容而定）</font> |
-| <font style="color:rgb(51, 51, 51);">connect</font> | <font style="color:rgb(51, 51, 51);">把信号和槽函数关联系起来（可以是一对一、一对多、多对一），一旦信号发出就触发槽函数</font> |
+| 信号 | 一个事件的通知，比如按钮被点击（clicked）等 |
+| 槽函数 | 响应这个事件的函数或方法（是否有参数根据实际实现的内容而定） |
+| connect | 把信号和槽函数关联系起来（可以是一对一、一对多、多对一），一旦信号发出就触发槽函数 |
 
 
 **很多控件都有信号**，我们以`QPushButton` 为例：
@@ -100,11 +100,11 @@ app.exec()
 ### 信号传递数据
 信号不仅可以触发事件，还可以携带数据。例如一些自带该功能的控件：
 
-| **<font style="color:rgb(51, 51, 51);">控件</font>** | **<font style="color:rgb(51, 51, 51);">信号</font>** | **<font style="color:rgb(51, 51, 51);">数据</font>** |
+| **控件** | **信号** | **数据** |
 | :--- | :--- | :--- |
-| <font style="color:rgb(51, 51, 51);">QCheckBox</font> | `<font style="color:rgb(51, 51, 51);">stateChanged(int)</font>`<br/><font style="color:rgb(51, 51, 51);"> </font><font style="color:rgb(51, 51, 51);">/</font><font style="color:rgb(51, 51, 51);"> </font>`<font style="color:rgb(51, 51, 51);">toggled(bool)</font>` | <font style="color:rgb(51, 51, 51);">勾选状态</font> |
-| <font style="color:rgb(51, 51, 51);">QLineEdit</font> | `<font style="color:rgb(51, 51, 51);">textChanged(str)</font>` | <font style="color:rgb(51, 51, 51);">当前文本</font> |
-| <font style="color:rgb(51, 51, 51);">QSlider</font> | `<font style="color:rgb(51, 51, 51);">valueChanged(int)</font>` | <font style="color:rgb(51, 51, 51);">当前数值</font> |
+| QCheckBox | `stateChanged(int)`<br/> / `toggled(bool)` | 勾选状态 |
+| QLineEdit | `textChanged(str)` | 当前文本 |
+| QSlider | `valueChanged(int)` | 当前数值 |
 
 
 ```python
@@ -128,10 +128,10 @@ app.exec()
 ### 内置的槽函数
 有一些控件自带了槽函数，例如：
 
-+ `<font style="color:rgb(51, 51, 51);">QLabel.setText()</font>`
-+ `<font style="color:rgb(51, 51, 51);">QLineEdit.clear()</font>`
-+ `<font style="color:rgb(51, 51, 51);">QPushButton.setEnabled()</font>`
-+ <font style="color:rgb(51, 51, 51);">......</font>
++ `QLabel.setText()`
++ `QLineEdit.clear()`
++ `QPushButton.setEnabled()`
++ ......
 
 这些内置方法可以像自己写的函数一样，直接 `.connect(...)` 使用
 
@@ -156,17 +156,17 @@ win.show()
 app.exec()
 ```
 
-### <font style="color:rgb(51, 51, 51);">自定义信号的创建与触发</font>
+### 自定义信号的创建与触发
 除了前面介绍的是内置的信号和槽机制外，我们也可以自定信号，然后在合适的时机触发（emit）它。
 
 #### 1.自定义信号
 需要使用**Signal**来自定义信号，支持带参数。
 
-+ <font style="color:rgb(51, 51, 51);">自定义信号必须是 </font>`<font style="color:rgb(51, 51, 51);">Signal(...)</font>`<font style="color:rgb(51, 51, 51);"> 类型</font>
-+ <font style="color:rgb(51, 51, 51);">自定义信号必须放在 </font>**<font style="color:rgb(51, 51, 51);">QObject </font>**<font style="color:rgb(51, 51, 51);">的子类中</font>
-+ <font style="color:rgb(51, 51, 51);">触发信号时使用 </font>`<font style="color:rgb(51, 51, 51);">.emit(...)</font>`<font style="color:rgb(51, 51, 51);"> 方法，参数类型要匹配</font>
-+ <font style="color:rgb(51, 51, 51);">可以不在一个线程中，例如在单独处理数据的线程中处理完毕后，通知主线程</font>
-+ <font style="color:rgb(51, 51, 51);">模块间的通信也更为方便，不需要直接调用彼此的函数</font>
++ 自定义信号必须是 `Signal(...)` 类型
++ 自定义信号必须放在 **QObject **的子类中
++ 触发信号时使用 `.emit(...)` 方法，参数类型要匹配
++ 可以不在一个线程中，例如在单独处理数据的线程中处理完毕后，通知主线程
++ 模块间的通信也更为方便，不需要直接调用彼此的函数
 
 ```python
 from PySide6.QtCore import Signal, QObject
